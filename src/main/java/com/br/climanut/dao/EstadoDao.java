@@ -3,6 +3,7 @@ package com.br.climanut.dao;
 import com.br.climanut.bean.Estado;
 
 
+
 public class EstadoDao extends GenericDAO<Estado>{
 	
 	/**

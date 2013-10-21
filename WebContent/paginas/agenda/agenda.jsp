@@ -4,9 +4,11 @@
 <head>
 <meta charset="utf-8">
 <link rel="StyleSheet" type="text/css" href="/climanut/css/estilo.css" >
-<link rel="stylesheet" type="text/css" href="/climanut/css/confirmacao.css" >
-<script type="text/javascript" src="/climanut/resources/jquery-1.9.0.min.js"></script>
- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
+<link rel="StyleSheet" type="text/css" href="/climanut/css/jquery-ui.css" >
+<link rel="stylesheet" type="text/css" href="/climanut/css/jquery.ui.autocomplete.css" >
+<script type="text/javascript" src="/climanut/resources/jquery.ui.autocomplete.js"></script>
+<script type="text/javascript" src="/climanut/resources/jquery-1.8.0.js"></script>
+<script type="text/javascript" src="/climanut/resources/jquery-ui.js"></script>
 <script type="text/javascript" src="/climanut/resources/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="/climanut/resources/inputfilter.js"></script>
 <script type="text/javascript" src="/climanut/resources/jquery.maskedinput.js"></script>
@@ -30,7 +32,7 @@
 			</div>
 			<jsp:include page="agendaCad.jsp"></jsp:include>
 			<jsp:include page="agendaPesq.jsp"></jsp:include>
-			<div id="titulos"></div><br>
+			
 			
 		</section>	
 	<footer>Teste</footer>

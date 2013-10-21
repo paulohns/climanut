@@ -21,6 +21,7 @@
 			    });
 		}
 		function LimparMensagens() {
+			$(".msg").slideUp();
 			$("#mensagemPreencherCampos").slideUp();
 			$("#mensagemSucessoInclusao").slideUp();
 			$("#mensagemErroInclusao").slideUp();

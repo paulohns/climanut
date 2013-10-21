@@ -199,7 +199,7 @@ section{
 	margin-left: 100px;
 }
 
-#abrirC,#abrirP,#abrirBloco,#abrirPavimento,#abrirLocal,#abrirEquipamento{
+#abrirC,#abrirP,#abrirContato{
 	border:1px solid #39a1b0;
 	background:#8be4f8;
 	font-size:20px;
@@ -208,12 +208,20 @@ section{
 	float: right;
 	margin-right:700px;
 }
-#abrirC:hover,#abrirP:hover,#abrirBloco:hover,#abrirPavimento:hover,#abrirLocal:hover,#abrirEquipamento:hover{
+#abrirCliente,#abrirBloco,#abrirPavimento,#abrirLocal,#abrirEquipamento{
+	border:1px solid #39a1b0;
+	background:#8be4f8;
+	font-size:20px;
+	cursor:pointer;
+	width:40px;
+	float: right;
+}
+#abrirC:hover,#abrirP:hover,#abrirContato:hover,#abrirCliente:hover,#abrirBloco:hover,#abrirPavimento:hover,#abrirLocal:hover,#abrirEquipamento:hover{
 	background: #a1eafa;
 	cursor: pointer;
 }
 
-#fecharC,#fecharP,#fecharBloco,#fecharPavimento,#fecharLocal,#fecharEquipamento{
+#fecharC,#fecharP,#fecharContato{
 	/*margin-left:80px;*/
 	border:1px solid #39a1b0;
 	background:#8be4f8;
@@ -224,12 +232,20 @@ section{
 	float: right;
 	margin-right:700px;	
 }
-
+#fecharCliente,#fecharBloco,#fecharPavimento,#fecharLocal,#fecharEquipamento{
+	border:1px solid #39a1b0;
+	background:#8be4f8;
+	font-size:20px;
+	cursor:pointer;
+	width:40px;
+	display:none;
+	float: right;
+}
 /* LINK */
 a{
-	margin-left:70px;
+	margin-left:0px;
 	font-size:12px;
-	color:#8b9698;
+	
 }
 #sair{
 	font-size:14px;
@@ -237,7 +253,7 @@ a{
 	font-weight: bold;
 	text-decoration: underline;
 }
-a:hover,#sair:hover{
+#sair:hover{
 	color:#55BF00;
 	
 }
@@ -247,6 +263,12 @@ article{
 
 /* ARTICLE CADASTRAR */
 .cadastrar{	
+	margin-top:0px;
+	color:#534741;
+	width: 1000px;
+}
+/* ARTICLE CADASTRAR CONTATO */
+.cadastrarContato{	
 	margin-top:0px;
 	color:#534741;
 	width: 1000px;
@@ -270,15 +292,20 @@ article{
 	float:left;
 	margin-left:200px;
 }
-#link{
+#linkMais{
 	cursor:pointer;
-	color:red;
+	color:#FF7F00;
+	font-size:14px;
+}
+#linkMenos{
+	cursor:pointer;
+	color:#9ACD32;
 	font-size:14px;
 }
 #cabecalhoLink{
 	font-size:14px;
 }
-#link:hover{
+#linkMais:hover,#linkMenos:hover{
 	color:#CCC;
 }
 #visualizarAgenda{	
@@ -310,7 +337,7 @@ article{
 	float:left;
 	height:650px;
 }
-#formBloco, #formPavimento, #formLocal, #formEquipamento{
+#formCliente,#formBloco, #formPavimento, #formLocal, #formEquipamento{
 	display: none;
 	margin-left: 50px;
 

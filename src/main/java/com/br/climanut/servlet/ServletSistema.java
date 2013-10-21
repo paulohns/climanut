@@ -15,9 +15,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.br.climanut.bean.Agenda;
+import com.br.climanut.bean.Bloco;
+import com.br.climanut.bean.Cliente;
+import com.br.climanut.bean.Equipamento;
+import com.br.climanut.bean.EquipamentosPorLocal;
+import com.br.climanut.bean.Local;
 import com.br.climanut.bean.Localizacao;
+import com.br.climanut.bean.Pavimento;
 import com.br.climanut.bean.Sistema;
 import com.br.climanut.facade.AgendaFacade;
+import com.br.climanut.facade.EquipamentoFacade;
 import com.br.climanut.facade.LocalizacaoFacade;
 import com.br.climanut.facade.SistemaFacade;
 import com.br.climanut.utils.ClimanutExceptions;
@@ -30,34 +37,129 @@ import com.google.gson.JsonObject;
 @WebServlet("/ServletSistema")
 public class ServletSistema extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	Sistema sistema;
+	Bloco bloco;
+	Pavimento pavimento;
+	Local local;
+	EquipamentosPorLocal equipamentosPorLocal;
+	SistemaFacade sistemaFacade;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
+			String operacao = request.getParameter("acao");
+			System.out.println("Ação"+operacao);
+			if (operacao.equals("IncluirCliente")) {
+				incluirCliente(request, response);
+			}else if (operacao.equals("IncluirBloco")) {
+				incluirBloco(request, response);
+			}else if (operacao.equals("IncluirPavimento")) {
+				incluirPavimento(request, response);
+			}else if (operacao.equals("IncluirLocal")) {
+				incluirLocal(request, response);
+			}else if (operacao.equals("IncluirEquipamento")) {
+				incluirEquipamento(request, response);
+			}else if (operacao.equals("AlterarBloco")) {
+				alterarBloco(request, response);
+			}else if (operacao.equals("AlterarPavimento")) {
+				alterarPavimento(request, response);
+			}else if (operacao.equals("AlterarLocal")) {
+				alterarLocal(request, response);
+			}else if (operacao.equals("AlterarEquipamento")) {
+				alterarEquipamento(request, response);
+			}else if (operacao.equals("PesquisarSistema")) {
+				pesquisarSistema(request, response);
+			}
+		} catch (ClimanutExceptions e) {
+			e.printStackTrace();
+		}
+	}
 
-		String operacao = request.getParameter("acao");
-		System.out.println("Ação"+operacao);
-		if (operacao.equals("Incluir")) {
-			incluirSistema(request, response);
+	
+	private void incluirCliente(HttpServletRequest request,HttpServletResponse response) throws ClimanutExceptions {
+		
+		try {
+			sistema = new Sistema();
+			sistemaFacade = new SistemaFacade();
+			
+			String campoIdCliente = request.getParameter("idCliente");
+			System.out.println("id>>>"+campoIdCliente);
+			int idCliente = Integer.valueOf(campoIdCliente);
+			System.out.println("id>>>"+idCliente);
+			
+			Cliente cliente = new Cliente();
+			cliente.setIdCliente(idCliente);
+			sistema.setCliente(cliente);
+			sistema.setStatus(1);
+			sistemaFacade.create(sistema);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		if (operacao.equals("Alterar")) {
-			alterarSistema(request, response);
+
+	}
+
+	private void incluirBloco(HttpServletRequest request,HttpServletResponse response) {
+		
+		try {
+			sistema = new Sistema();
+			sistemaFacade = new SistemaFacade();
+			
+			String campoIdCliente = request.getParameter("idCliente");
+			System.out.println("id>>>"+campoIdCliente);
+			int idCliente = Integer.valueOf(campoIdCliente);
+			System.out.println("id>>>"+idCliente);
+			String campoBloco = request.getParameter("bloco");
+			System.out.println("id>>>"+campoBloco);
+			
+			Cliente cliente = new Cliente();
+			cliente.setIdCliente(idCliente);
+			bloco = new Bloco();
+			bloco.setCliente(cliente);
+			bloco.setDescricaoBloco(campoBloco);
+			
+			sistemaFacade.createBloco(bloco);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		if (operacao.equals("Pesquisar")) {
-			pesquisarSistema(request, response);
-		}
+
+
+	}
+	private void incluirPavimento(HttpServletRequest request,HttpServletResponse response) {
+		
+	}
+	private void incluirLocal(HttpServletRequest request,HttpServletResponse response) {
+		
+	}
+	private void incluirEquipamento(HttpServletRequest request,HttpServletResponse response) {
+		
+	}
+	
+	private void alterarBloco(HttpServletRequest request,HttpServletResponse response) {
 		
 	}
 
-	private void incluirSistema(HttpServletRequest request,HttpServletResponse response) {
+	private void alterarPavimento(HttpServletRequest request,HttpServletResponse response) {
 		
 	}
 
-	private void alterarSistema(HttpServletRequest request,HttpServletResponse response) {
+	private void alterarLocal(HttpServletRequest request,HttpServletResponse response) {
 		
 	}
+
+	private void alterarEquipamento(HttpServletRequest request,HttpServletResponse response) {
+		
+	}
+
+
+
+
+	
 
 	private void pesquisarSistema(HttpServletRequest request,HttpServletResponse response) throws IOException {
 		

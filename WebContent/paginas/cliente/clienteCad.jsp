@@ -5,7 +5,7 @@
 			<span id="corTitulo" class="alterarTitulo" style="display:none;"> Alterar Cliente</span>
 			<jsp:include page="../botoes/abrirFecharC.jsp"></jsp:include>
 			
-			<div id="formCadastro" style="float:left;height:650px;"><br>
+			<div id="formCadastro" style="float:left;height:700px;"><br>
 				<input name="idCliente" id="idCliente" type="hidden" /><br>
 				<label>Nome/Razão Social:</label><span id="asterisco">*</span><br>
 				<input id="nome" name="nome" class="campoTexto" type="text" size="60" maxlength="" /><br>
@@ -45,10 +45,10 @@
 				
 				<input id="botaoIncluirCliente" name="acao" class="botao" type="submit" value="Incluir">
 				<input id="botaoAlterarCliente" name="acao" class="botao" type="submit" value="Alterar" style="display:none;">
-				<jsp:include page="../botoes/botaoLimpar.jsp"></jsp:include>
+				<jsp:include page="../botoes/botaoLimpar.jsp"></jsp:include><br><br>
 				<jsp:include page="../mensagens/mensagens.jsp"></jsp:include>
 			</div>
-			<div id="formCadastro1" class="formCadastroCliente" >
+			<div id="formCadastro1" class="formCadastroCliente" style="height:700px;" >
 				<label id="tituloMedio" >&bull;Identificação do Ambiente ou Conjunto de Ambientes</label><br><br>
 				<label>Identificação do Ambiente :</label><span id="asterisco">*</span><br>
 				<input id="identificacaoAmbiente" name="identificacaoAmbiente" class="campoTexto" type="text" size="60" maxlength=""  /><br>
@@ -68,7 +68,7 @@
 				<label>Senha:</label><span id="asterisco" >*</span><br>
 				<input id="senha" name="senha" class="campoTexto" type="password" size="40" maxlength="8"  /><br>
 			</div>
-			<div id="formContato">
+			<!-- <div id="formContato">
 				<label id="corTitulo" >&there4; Incluir Contato</label><br>
 				<div id="separaContato"></div><br>
 				<label>Cliente:</label><br>
@@ -86,7 +86,7 @@
 				<input id="botaoAlterarContato" name="acao" class="botaoAlterar" type="submit" value="Alterar" style="display:none;">
 				<jsp:include page="../botoes/botaoLimparContato.jsp"></jsp:include>
 				<jsp:include page="../mensagens/mensagens.jsp"></jsp:include>
-			</div>
+			</div> -->
 			
 		</article>
 	

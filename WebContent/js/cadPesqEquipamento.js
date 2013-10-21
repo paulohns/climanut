@@ -55,17 +55,29 @@ function alterarEquipamento(equipamento){
 function excluirEquipamento(id){
 	alert("Excluir id:"+id);
 	console.log("Teste id:"+id);
-		$.ajax({  
-    		  type: "post",    
-    		  url: "/climanut/ServletEquipamento", 
-    		  data: {
-    		       idEquipamento: id,
-    		       acao:"Excluir"
+				$.ajax({  
+    		        type: "post",
+    		        dataType: 'json',
+    		        url: "/climanut/ServletEquipamento", 
+    		        data: {
+    		        	idEquipamento: id,
+    					acao:"Excluir"
     		        },  
-    		        success: alert("Equipamento excluído com sucesso!"),
-    			    error: alert("Erro ao excluir equipamento")
-    			    
-    		 });    
+    			    success: function(result){
+    			    	if(result==null){
+    			    	console.log("erro:"+result);
+    			    	alert("Erro ao excluir equipamento!");
+    			    	}else{
+    			    	chargeData();
+	        			alert("Excluído com sucesso!");
+    			    	}
+    			     },
+    		         error:function(result){
+    		        	console.log("erro:"+result);
+    	       			alert("Erro ao excluir equipamento!");
+					}
+    			});
+    
 }
 var anOpen = [];
 //CARREGA OS DADOS PARA A LISTA 

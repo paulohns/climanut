@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="StyleSheet" type="text/css" href="/climanut/css/estilo.css" >
 <script src="/climanut/resources/jquery-1.9.0.min.js" type="text/javascript"></script>
-<title>CliManut</title>
+<title>Climanut</title>
 </head>
 <body>
 	

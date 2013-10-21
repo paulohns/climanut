@@ -65,7 +65,7 @@
 	float: left;
 	text-align:left;
 }
-.ui-widget-header { background: #a1eafa;; color:#FFF; }
+.ui-widget-header { background: #a1eafa; color:#FFF; }
 
 .dataTables_info {
 	width: 50%;
@@ -131,18 +131,20 @@ table.display {
 table.display thead {
 	padding:5px;
 	margin:5px;
+	border-top:1px solid #39a1b0;
+	border-bottom:1px solid #39a1b0;
 }
 table.display thead th {
 	padding: 15px 18px 15px 10px;
 	font-weight: normal;
+	background: #8be4f8;
+	font-size:15px;
 	cursor: pointer;
 	* cursor: hand;
 }
 
-
-
 table.display tr.heading2 td {
-	border-bottom: 1px solid #aaa;
+	/*border-bottom: 1px solid #aaa;*/
 }
 
 table.display td {
@@ -153,83 +155,13 @@ table.display td.center {
 	text-align: center;
 }
 
-
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * DataTables sorting
- */
-
-.sorting_asc {
-	background: url("Climanut/img/sort_asc.png") no-repeat center right;
-}
-
-.sorting_desc {
-	background: url("Climanut/img/sort_desc.png") no-repeat center right;
-}
-
-.sorting {
-	background: url("Climanut/img/sort_both.png") no-repeat center right;
-}
-
-.sorting_asc_disabled {
-	background: url("Climanut/img/sort_asc_disabled.png") no-repeat center right;
-}
-
-.sorting_desc_disabled {
-	background: url('Climanut/img/sort_desc_disabled.png') no-repeat center right;
-}
-
-
-
-
-
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- * DataTables row classes
- */
-table.display tr.odd.gradeA {
-	background-color: #ddffdd;
-}
-
-table.display tr.even.gradeA {
-	background-color: #eeffee;
-}
-
-table.display tr.odd.gradeC {
-	background-color: #ddddff;
-}
-
-table.display tr.even.gradeC {
-	background-color: #eeeeff;
-}
-
-table.display tr.odd.gradeX {
-	background-color: #ffdddd;
-}
-
-table.display tr.even.gradeX {
-	background-color: #ffeeee;
-}
-
-table.display tr.odd.gradeU {
-	background-color: #ddd;
-}
-
-table.display tr.even.gradeU {
-	background-color: #eee;
-}
-
-
 tr.odd {
-	background-color: #E2E4FF;
+	background-color: #F0FFF0;
 }
 
 tr.even {
-	background-color: white;
+	background-color: #E0EEE0;
 }
-
-
-
-
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Misc

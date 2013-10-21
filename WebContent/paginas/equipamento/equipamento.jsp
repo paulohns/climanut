@@ -3,9 +3,11 @@
 <head>
 <meta charset="utf-8">
 <link rel="StyleSheet" type="text/css" href="/climanut/css/estilo.css" >
-<script type="text/javascript" src="/climanut/resources/jquery-1.9.0.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<link rel="StyleSheet" type="text/css" href="/climanut/css/jquery-ui.css" >
+<link rel="stylesheet" type="text/css" href="/climanut/css/jquery.ui.autocomplete.css" >
+<script type="text/javascript" src="/climanut/resources/jquery.ui.autocomplete.js"></script>
+<script type="text/javascript" src="/climanut/resources/jquery-1.8.0.js"></script>
+<script type="text/javascript" src="/climanut/resources/jquery-ui.js"></script>
 <script type="text/javascript" src="/climanut/resources/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="/climanut/resources/inputfilter.js"></script>
 <script type="text/javascript" src="/climanut/resources/jquery.maskedinput.js"></script>

@@ -61,16 +61,19 @@ $(document).ready(function(){
 				
 			/* SE ESTIVER ABERTO, FECHA O FORMPESQUISA, ESCONDE O - E MUDA PARA + */
 			$("#formPesquisa").slideUp();
+			$("#formContato").slideUp();
 			$("#fecharP").hide();
 			$("#abrirP").show();
 				
 			$("#formCadastro").slideDown();
 			$("#formCadastro1").slideDown();
-			$("#formContato").slideDown();
+			
 			$("#abrirC").hide();
 			$("#fecharC").show();
+			$("#fecharContato").hide();
+			$("#abrirContato").show();
 			/* AUMENTAR BASE PARA CADASTRO E PESQUISA */
-			$("#baseCadPesq").css("height", "1900px");
+			$("#baseCadPesq").css("height", "1500px");
 			
 			//ALTERAÇÃO
 			$(".botaoIncluir").show();
@@ -89,8 +92,6 @@ $(document).ready(function(){
 			LimparCampos("#formCadastro");
 			$(".alterarTitulo").hide();
 			$(".incluirTitulo").show();
-			
-			
 				
 		});
 		$("#abrirP").click(function(){

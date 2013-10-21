@@ -30,6 +30,10 @@
  
  	   <mapping class="com.br.climanut.bean.Pessoa"/>
  	   <mapping class="com.br.climanut.bean.Cliente"/>
+ 	   <mapping class="com.br.climanut.bean.Bloco"/>
+ 	   <mapping class="com.br.climanut.bean.Pavimento"/>
+ 	   <mapping class="com.br.climanut.bean.Local"/>
+ 	   <mapping class="com.br.climanut.bean.EquipamentosPorLocal"/>
  	   <mapping class="com.br.climanut.bean.Tecnico"/>
  	   <mapping class="com.br.climanut.bean.Agenda"/>
  	   <mapping class="com.br.climanut.bean.AgendaAnvisa"/>

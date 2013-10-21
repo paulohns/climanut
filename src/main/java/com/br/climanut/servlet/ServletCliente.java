@@ -23,6 +23,8 @@ import com.br.climanut.facade.ChamadoFacade;
 import com.br.climanut.facade.ClienteFacade;
 import com.br.climanut.utils.ClimanutExceptions;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
 
 
 
@@ -77,9 +79,12 @@ public class ServletCliente extends HttpServlet {
 		try {
 			List<Cliente> listaClientes = new ArrayList<Cliente>();
 			JSONArray arrayObj = new JSONArray();
+			JsonArray array = new JsonArray();
+			JsonObject jsonObject;
 			ClienteFacade clienteFacade = new ClienteFacade();
 			
 				listaClientes = clienteFacade.findAll();
+			
 			
 			
 	        termo = termo.toLowerCase();
@@ -90,14 +95,18 @@ public class ServletCliente extends HttpServlet {
 	        	if(nomes.startsWith(termo)){
 	        		System.out.println(listaClientes.get(i).getNomeAmbiente());
 	        		nomesCliente[i] = listaClientes.get(i).getNomeAmbiente();
-	        		arrayObj.put(nomesCliente[i]);
+	        		jsonObject = new JsonObject();
+	        		jsonObject.addProperty("id",listaClientes.get(i).getIdCliente());
+	        		jsonObject.addProperty("nome",listaClientes.get(i).getNomeAmbiente());
+	        		array.add(jsonObject);
 	        	}
 			}
 	        
-	        System.out.println("Array:"+arrayObj);
+	        System.out.println("Array:"+array);
+
 			PrintWriter out = response.getWriter();
 	        response.setContentType("text/text;charset=utf-8");
-	        out.println(arrayObj.toString());
+	        out.println(array.toString());
 	        out.close();
 		} catch (ClimanutExceptions e) {
 			e.printStackTrace();

@@ -2,10 +2,12 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link rel="StyleSheet" type="text/css" href="css/estilo.css" >
-<script src="/climanut/resources/jquery-1.9.0.min.js" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="/climanut/css/confirmacao.css" >
-<script type="text/javascript" src="/climanut/js/confirmaExclusao.js"></script>
+<link rel="StyleSheet" type="text/css" href="/climanut/css/estilo.css" >
+<link rel="StyleSheet" type="text/css" href="/climanut/css/jquery-ui.css" >
+<link rel="stylesheet" type="text/css" href="/climanut/css/jquery.ui.autocomplete.css" >
+<script type="text/javascript" src="/climanut/resources/jquery.ui.autocomplete.js"></script>
+<script type="text/javascript" src="/climanut/resources/jquery-1.8.0.js"></script>
+<script type="text/javascript" src="/climanut/resources/jquery-ui.js"></script>
 <title>Climanut</title>
 </head>
 <body>

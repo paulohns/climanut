@@ -65,7 +65,7 @@ public class ServletEquipamento extends HttpServlet {
 				}	
 			}
 		} catch (Exception e) {
-			System.out.println("Operação Desconhecida!");
+			System.out.println("Erro");
 			e.printStackTrace();
 		}
 		
@@ -138,7 +138,10 @@ public class ServletEquipamento extends HttpServlet {
 
 	}
 	private void excluirEquipamento(HttpServletRequest request,HttpServletResponse response) {
-		
+	
+		JsonObject jsonObject = new JsonObject();
+		String msg = "";
+		PrintWriter out = null;
 		try {
 			
 			equipamento = new Equipamento();
@@ -150,10 +153,22 @@ public class ServletEquipamento extends HttpServlet {
 			equipamento = equipamentoFacade.find(idEquipamento);
 			equipamentoFacade.delete(equipamento);
 			
-		} catch (Exception e) {
+			msg = "ok";
+			
+			out = response.getWriter();
+			
+		}catch (ClimanutExceptions e) {
+			msg = "erro1";
 			e.printStackTrace();
-		}
-	
+		} catch (IOException e) {
+			msg = "erro1";
+			e.printStackTrace();
+		} 
+		
+		jsonObject.addProperty("msg", msg);
+        response.setContentType("text/text;charset=utf-8");
+        out.println(jsonObject);
+		
 	}
 	
 	private void pesquisarEquipamento(HttpServletRequest request,HttpServletResponse response) throws ClimanutExceptions, IOException {

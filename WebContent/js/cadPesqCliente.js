@@ -324,13 +324,5 @@ $(document).ready(function(){
 			LimparCampos("#formCadastro1");
 			
 		});
-		$("#botaoLimparContato").click(function(){
-			LimparMensagens();
-			LimparCampos("#formContato");
-		});
-		$("#botaoIncluirContato").click(function(){
-			alert("Olá");
-		});
 		
-	
 });

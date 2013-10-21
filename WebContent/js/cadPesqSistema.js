@@ -106,12 +106,12 @@ function AjaxGetFieldDataSucceeded(result) {
 			    if (null != aData){
 			    console.log(aData.idAgenda);
 			    console.log(aData.incluidoPor);
-				    if(aData.incluidoPor == 1){
+				   /* if(aData.incluidoPor == 1){
 				       alterarAgenda(aData);
 				       chargeData();
 				    }else{
 						alert("Agenda não pode ser alterada, pois foi aberta pelo Sistema!");
-					}
+					}*/
 			    }
 		});
 	}
@@ -171,86 +171,93 @@ function AjaxRefreshDataFailed(result) {
 }
 $(document).ready(function(){
 			
-			
-			
 			/* VALIDAR CAMPOS PARA CADASTRO */
 			$("#botaoIncluirCliente").click(function(){
-	
-				if($("#cliente").val() == ""){
-					$("#mensagemPreencherCampos").slideDown();
-				return false;
+				
+				if($("#idCliente").val() == "" || $("#cliente").val() == ""){
+					$("#mensagemPreencherCamposCliente").slideDown();
+					return false;
+				}else if($("#idCliente").val()!= 0){
+					$("#mensagemErroInclusaoBloco").slideDown();
+					return false;
 				}else{
-					$("#mensagemSucessoInclusaoCliente").slideDown();
-					/*$.ajax({  
+					
+					$.ajax({  
 				        type: "post",    
 				        url: "/climanut/ServletSistema", 
 				        data: {
-				        	nome: $("#cliente").val(),  
-				        	acao:"Incluir"
+				        	idCliente: $("#idCliente").val(),
+				        	acao:"IncluirCliente"
 				        	
 				        },  
-				        success: function(result){     
-				           LimparCampos("#formCadastro");
-				           $("#mensagemSucessoInclusao").slideDown();
+				        success: function(result){    
+				           LimparCampos("#formCliente");
+				           $("#mensagemSucessoInclusaoCliente").slideDown();
 				        },
 		                 error:function(){
-		                	 $("#mensagemErroInclusao").slideDown();   
-		                 }      
-				    });  */
+		                   $("#mensagemErroInclusaoCliente").slideDown();   
+		                }      
+				    });
 
 				}
 	
 			});
 			$("#botaoIncluirBloco").click(function(){
 				
-				if($("#clienteBloco").val() || $("#bloco").val() == "" ){
-					$("#mensagemPreencherCampos").slideDown();
-				return false;
+				if($("#idClienteBloco").val()== "" || $("#clienteBloco").val()== "" ||$("#bloco").val() == "" ){
+					$("#mensagemPreencherCamposBloco").slideDown();
+					return false;
+				}else if($("#idBloco").val()!= 0){
+					$("#mensagemErroInclusaoBloco").slideDown();
+					return false;
 				}else{
-					$("#mensagemSucessoInclusaoBloco").slideDown();
-					/*$.ajax({  
+					$.ajax({  
 				        type: "post",    
 				        url: "/climanut/ServletSistema", 
 				        data: {
+				        	idCliente: $("#idClienteBloco").val(), 
 				        	bloco: $("#bloco").val(),  
-				        	acao:"Incluir"
+				        	acao:"IncluirBloco"
 				        	
 				        },  
 				        success: function(result){     
+				           idClienteBloco = null;
 				           LimparCampos("#formCadastro");
-				           $("#mensagemSucessoInclusao").slideDown();
+				           $("#mensagemSucessoInclusaoBloco").slideDown();
+				           $("#bloco").attr('disabled','disabled');
 				        },
 		                 error:function(){
-		                	 $("#mensagemErroInclusao").slideDown();   
+		                	$("#mensagemErroInclusaoBloco").slideDown();
 		                 }      
-				    });  */
-
+				    });
 				}
-	
 			});
+			
 			$("#botaoIncluirPavimento").click(function(){
 				
-				if($("#clientePavimento").val() == "" || $("#pavimento").val() == "" || $("#blocosPavimento option:selected").val() == "0"){
-					$("#mensagemPreencherCampos").slideDown();
+				if($("#idClientePavimento").val() == "" || $("#clientePavimento").val() == "" || $("#idBlocoPavimento").val() == "" || $("#pavimento").val() == ""){
+					$("#mensagemPreencherCamposPavimento").slideDown();
 				return false;
 				}else{
-					$("#mensagemSucessoInclusaoPavimento").slideDown();
-					/*$.ajax({  
+					
+					$.ajax({  
 				        type: "post",    
 				        url: "/climanut/ServletSistema", 
 				        data: {
-				        	pavimento: $("#pavimento").val(),  
-				        	acao:"Incluir"
+				        	idCliente: $("#idClientePavimento").val(),
+				        	idBlocoPavimento: $("#idBlocoPavimento").val(),
+				        	pavimento: $("#pavimento").val(),
+				        	acao:"IncluirPavimento"
 				        	
 				        },  
 				        success: function(result){     
 				           LimparCampos("#formCadastro");
-				           $("#mensagemSucessoInclusao").slideDown();
+				           $("#mensagemSucessoInclusaoPavimento").slideDown();
 				        },
 		                 error:function(){
-		                	 $("#mensagemErroInclusao").slideDown();   
-		                 }      
-				    });  */
+		                	 $("#mensagemErroInclusaoPavimento").slideDown();   
+		                }      
+				    });
 
 				}
 	
@@ -261,23 +268,24 @@ $(document).ready(function(){
 					$("#mensagemPreencherCampos").slideDown();
 				return false;
 				}else{
-					$("#mensagemSucessoInclusaoLocal").slideDown();
-					/*$.ajax({  
+					$.ajax({  
 				        type: "post",    
 				        url: "/climanut/ServletSistema", 
 				        data: {
-				        	local: $("#local").val(),  
-				        	acao:"Incluir"
+				        	idCliente: $("#idClienteBloco").val(), 
+				        	idBloco: $("#idBloco").val(),  
+				        	idBloco: $("#pavimento").val(),  
+				        	acao:"IncluirPAvimento"
 				        	
 				        },  
 				        success: function(result){     
 				           LimparCampos("#formCadastro");
-				           $("#mensagemSucessoInclusao").slideDown();
+				           $("#mensagemSucessoInclusaoLocal").slideDown();
 				        },
 		                 error:function(){
-		                	 $("#mensagemErroInclusao").slideDown();   
+		                	 $("#mensagemErroInclusaoLocal").slideDown();   
 		                 }      
-				    });  */
+				    });
 
 				}
 	
@@ -350,17 +358,44 @@ $(document).ready(function(){
 			//$("#clienteBloco").attr('disabled','disabled');
 			$("#bloco").attr('disabled','disabled');
 			//$("#clientePavimento").attr('disabled','disabled');
-			$("#blocosPavimento").attr('disabled','disabled');
+			$("#blocoPavimento").attr('disabled','disabled');
 			$("#pavimento").attr('disabled','disabled');
 			//$("#clienteLocal").attr('disabled','disabled');
-			$("#blocosLocal").attr('disabled','disabled');
-			$("#pavimentosLocal").attr('disabled','disabled');
+			$("#blocoLocal").attr('disabled','disabled');
+			$("#pavimentoLocal").attr('disabled','disabled');
 			$("#local").attr('disabled','disabled');
 			//$("#clienteEquipamento").attr('disabled','disabled');
-			$("#blocosEquipamento").attr('disabled','disabled');
-			$("#pavimentosEquipamento").attr('disabled','disabled');
-			$("#locaisEquipamento").attr('disabled','disabled');
-			$("#equipamentos").attr('disabled','disabled');
+			$("#blocoEquipamento").attr('disabled','disabled');
+			$("#pavimentoEquipamento").attr('disabled','disabled');
+			$("#localEquipamento").attr('disabled','disabled');
+			$("#equipamento").attr('disabled','disabled');
+		
+			//AutocompleteCliente
+			$("#cliente").focus(function(){
+				autocompleteCliente("#cliente","#idCliente","PesquisarAutocompleteCliente");
+			});
+			//AutocompleteBloco
+			$("#clienteBloco").focus(function(){
+				autocompleteCliente("#clienteBloco","#idCliente","PesquisarAutocompleteCliente");
+			});
+			$("#bloco").focus(function(){
+				LimparMensagens();
+				autocompleteBlocoPorCliente("#bloco",$("idClienteBloco").val(),"PesquisarAutocompleteBlocoPorCliente");
+			});
+			//AutocompletePavimento
+			$("#clientePavimento").focus(function(){
+				autocompleteCliente("#clientePavimento","#idClientePavimento","PesquisarAutocompleteCliente");
+			});
+			
+			//AutocompleteLocal
+			$("#clienteLocal").focus(function(){
+				autocompleteCliente("#clienteLocal","#idClienteLocal","PesquisarAutocompleteCliente");
+			});
+			
+			//AutocompleteEquipamento
+			$("#clienteEquipamento").focus(function(){
+				autocompleteCliente("#clienteEquipamento","#idClienteEquipamento","PesquisarAutocompleteCliente");
+			});
 			
 			/* RETIRA MENSAGEM DA TELA */
 			$(".campoTexto").keypress(function(){
@@ -387,16 +422,14 @@ $(document).ready(function(){
 				LimparCampos("#formEquipamento");
 				LimparMensagens();
 			});
-			$("#blocos").change(function(){
+			
+			$("#pavimento").change(function(){
 				LimparMensagens();
 			});
-			$("#pavimentos").change(function(){
+			$("#local").change(function(){
 				LimparMensagens();
 			});
-			$("#locais").change(function(){
-				LimparMensagens();
-			});
-			$("#equipamentos").change(function(){
+			$("#equipamento").change(function(){
 				LimparMensagens();
 			});
 				

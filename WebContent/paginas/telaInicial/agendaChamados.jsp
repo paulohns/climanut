@@ -12,16 +12,16 @@
 				<table style="font-size:14px;;margin-left:0px;margin-top:6px;width:400px;">
 				<tr id="cabecalhoLink"><td width="2px;"></td><td >Cliente</td><td width="150px;">Data Final</td></tr>
 					<tr><td width="2px;"></td><td></td>&nbsp;<td width="150px;"></td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX YYYY</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX ZZZ</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX YYY</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX ZZZ AAA</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX GGG DDD CCC</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX YYY</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX GGG TTT AAA</td><td>06/05/2013</td></tr>
+					<tr id="linkMais"><td><input type="hidden" value="1"></td><td>Empresa XXX</td><td>06/05/2013</td></tr>
+					<tr id="linkMais"><td><input type="hidden" value="1"></td><td>Empresa XXX YYYY</td><td>06/05/2013</td></tr>
+					<tr id="linkMais"><td><input type="hidden" value="1"></td><td>Empresa XXX ZZZ</td><td>06/05/2013</td></tr>
+					<tr id="linkMais"><td><input type="hidden" value="1"></td><td>Empresa XXX</td><td>06/05/2013</td></tr>
+					<tr id="linkMais"><td><input type="hidden" value="1"></td><td>Empresa XXX YYY</td><td>06/05/2013</td></tr>
+					<tr id="linkMenos"><td><input type="hidden" value="1"></td><td>Empresa XXX ZZZ AAA</td><td>06/05/2013</td></tr>
+					<tr id="linkMenos"><td><input type="hidden" value="1"></td><td>Empresa XXX GGG DDD CCC</td><td>06/05/2013</td></tr>
+					<tr id="linkMenos"><td><input type="hidden" value="1"></td><td>Empresa XXX YYY</td><td>06/05/2013</td></tr>
+					<tr id="linkMenos"><td><input type="hidden" value="1"></td><td>Empresa XXX</td><td>06/05/2013</td></tr>
+					<tr id="linkMenos"><td><input type="hidden" value="1"></td><td>Empresa XXX GGG TTT AAA</td><td>06/05/2013</td></tr>
 				</table>
 			</div>
 			
@@ -36,16 +36,16 @@
 				<table style="font-size:14px;;margin-left:0px;margin-top:px;">
 					<tr><td width="2px;"></td><td width="270px;">Cliente</td><td width="150px;">Data de Abertura</td></tr>
 					<tr><td width="2px;"></td><td width="270px;"></td>&nbsp;<td width="150px;"></td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX YYYY</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX ZZZ</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX YYY</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX ZZZ AAA</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX GGG DDD CCC</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX YYY</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX</td><td>06/05/2013</td></tr>
-					<tr id="link"><td><input type="hidden" value="1"></td><td>Empresa XXX GGG TTT AAA</td><td>06/05/2013</td></tr>
+					<tr id="linkMais"><td><input type="hidden" value="1"></td><td>Empresa XXX</td><td>06/05/2013</td></tr>
+					<tr id="linkMais"><td><input type="hidden" value="1"></td><td>Empresa XXX YYYY</td><td>06/05/2013</td></tr>
+					<tr id="linkMais"><td><input type="hidden" value="1"></td><td>Empresa XXX ZZZ</td><td>06/05/2013</td></tr>
+					<tr id="linkMais"><td><input type="hidden" value="1"></td><td>Empresa XXX</td><td>06/05/2013</td></tr>
+					<tr id="linkMais"><td><input type="hidden" value="1"></td><td>Empresa XXX YYY</td><td>06/05/2013</td></tr>
+					<tr id="linkMenos"><td><input type="hidden" value="1"></td><td>Empresa XXX ZZZ AAA</td><td>06/05/2013</td></tr>
+					<tr id="linkMenos"><td><input type="hidden" value="1"></td><td>Empresa XXX GGG DDD CCC</td><td>06/05/2013</td></tr>
+					<tr id="linkMenos"><td><input type="hidden" value="1"></td><td>Empresa XXX YYY</td><td>06/05/2013</td></tr>
+					<tr id="linkMenos"><td><input type="hidden" value="1"></td><td>Empresa XXX</td><td>06/05/2013</td></tr>
+					<tr id="linkMenos"><td><input type="hidden" value="1"></td><td>Empresa XXX GGG TTT AAA</td><td>06/05/2013</td></tr>
 					
 				</table>
 				

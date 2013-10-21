@@ -137,8 +137,9 @@ function AjaxRefreshDataFailed(result) {
 }
 $(document).ready(function() {
 
-	$("#dataInicialPesq").mask("99/99/9999");
+	//$("#dataInicialPesq").mask("99/99/9999");
 	$("#dataFinalPesq").mask("99/99/9999");
+	$("#dataInicialPesq").datepicker();
 	
 	$("#botaoPesquisarAgendaAnvisa").click(function() {
 

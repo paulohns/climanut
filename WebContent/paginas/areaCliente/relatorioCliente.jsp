@@ -4,8 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="StyleSheet" type="text/css" href="../../css/estilo.css" >
-<link rel="stylesheet" type="text/css" href="../../css/confirmacao.css" >
+<link rel="StyleSheet" type="text/css" href="/climanut/css/estilo.css" >
+<link rel="StyleSheet" type="text/css" href="/climanut/css/jquery-ui.css" >
+<script type="text/javascript" src="/climanut/resources/jquery-1.8.0.js"></script>
+<script type="text/javascript" src="/climanut/resources/jquery-ui.js"></script>
 <title>Relatório</title>
 </head>
 <body>
