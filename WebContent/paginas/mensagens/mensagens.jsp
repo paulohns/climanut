@@ -1,11 +1,11 @@
-<p id="mensagemPreencherCampos" style="display:none"><img src="/climanut/img/preencherCampos.png" /></p>
-<p id="mensagemSucessoInclusao" style="display:none"><img src="/climanut/img/sucessoInclusao.png" /></p>
-<p id="mensagemErroInclusao" style="display:none"><img src="/climanut/img/erroInclusao.png" /></p>
-<p id="mensagemSucessoAlteracao" style="display:none"><img src="/climanut//img/sucessoAlteracao.png" /></p>
-<p id="mensagemErroAlteracao" style="display:none"><img src="/climanut/img/alteracaoInvalida.png" /></p>
-<p id="mensagemErroExclusao" style="display:none"><img src="/climanut/img/erroExclusao.png" /></p>
-<p id="mensagemPreencherCliente" style="display:none"><img src="/climanut/img/preencherCliente.png" /></p>
-<p id="mensagemPreencherBloco" style="display:none"><img src="/climanut/img/preencherBloco.png" /></p>
-<p id="mensagemPreencherPavimento" style="display:none"><img src="/climanut/img/preencherPavimento.png" /></p>
-<p id="mensagemPreencherLocal" style="display:none"><img src="/climanut/img/preencherLocal.png" /></p>
-<p id="mensagemPreencherEquipamento" style="display:none"><img src="/climanut/img/preencherEquipamento.png" /></p>
+<p class="msg" id="mensagemPreencherCampos" style="display:none"><img src="/climanut/img/preencherCampos.png" /></p>
+<p class="msg" id="mensagemSucessoInclusao" style="display:none"><img src="/climanut/img/sucessoInclusao.png" /></p>
+<p class="msg" id="mensagemErroInclusao" style="display:none"><img src="/climanut/img/erroInclusao.png" /></p>
+<p class="msg" id="mensagemSucessoAlteracao" style="display:none"><img src="/climanut//img/sucessoAlteracao.png" /></p>
+<p class="msg" id="mensagemErroAlteracao" style="display:none"><img src="/climanut/img/alteracaoInvalida.png" /></p>
+<p class="msg" id="mensagemErroExclusao" style="display:none"><img src="/climanut/img/erroExclusao.png" /></p>
+<p class="msg" id="mensagemPreencherCliente" style="display:none"><img src="/climanut/img/preencherCliente.png" /></p>
+<p class="msg" id="mensagemPreencherBloco" style="display:none"><img src="/climanut/img/preencherBloco.png" /></p>
+<p class="msg" id="mensagemPreencherPavimento" style="display:none"><img src="/climanut/img/preencherPavimento.png" /></p>
+<p class="msg" id="mensagemPreencherLocal" style="display:none"><img src="/climanut/img/preencherLocal.png" /></p>
+<p class="msg" id="mensagemPreencherEquipamento" style="display:none"><img src="/climanut/img/preencherEquipamento.png" /></p>

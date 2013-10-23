@@ -70,8 +70,11 @@ public class ServletBloco extends HttpServlet {
 		}
 		if (operacao.equals("PesquisarAutocompleteBlocoPorCliente")) {
 			String termo = request.getParameter("termo");
+			System.out.println("termo:"+termo);
 			String campoIdCliente = request.getParameter("idCliente");
+			System.out.println("campoIdCliente:"+campoIdCliente);
 			int idCliente = Integer.valueOf(campoIdCliente);
+			System.out.println("IdCliente:"+idCliente);
 			try {
 				autocompleteBlocoPorCliente(request, response, operacao,termo,idCliente);
 			} catch (JSONException e) {

@@ -1,4 +1,5 @@
-<p id="mensagemPreencherCamposCliente" style="display:none"><img src="/climanut/img/preencherCampos.png" /></p>
-<p id="mensagemSucessoInclusaoCliente" style="display:none"><img src="/climanut/img/sucessoInclusao.png" /></p>
-<p id="mensagemErroInclusaoCliente" style="display:none"><img src="/climanut/img/erroInclusao.png" /></p>
-<p id="mensagemPreencherCliente" style="display:none"><img src="/climanut/img/preencherCliente.png" /></p>
+<p class="msg" id="mensagemPreencherCamposCliente" style="display:none"><img src="/climanut/img/preencherCampos.png" /></p>
+<p class="msg" id="mensagemSucessoInclusaoCliente" style="display:none"><img src="/climanut/img/sucessoInclusao.png" /></p>
+<p class="msg" id="mensagemErroInclusaoCliente" style="display:none"><img src="/climanut/img/erroInclusao.png" /></p>
+<p class="msg" id="mensagemPreencherCliente" style="display:none"><img src="/climanut/img/preencherCliente.png" /></p>
+<p class="msg" id="mensagemInformeClienteCadastrado" style="display:none"><img src="/climanut/img/informeClienteCadastrado.png" /></p>

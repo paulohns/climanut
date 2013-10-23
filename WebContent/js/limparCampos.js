@@ -22,27 +22,4 @@
 		}
 		function LimparMensagens() {
 			$(".msg").slideUp();
-			$("#mensagemPreencherCampos").slideUp();
-			$("#mensagemSucessoInclusao").slideUp();
-			$("#mensagemErroInclusao").slideUp();
-			$("#mensagemSucessoAlteracao").slideUp();
-			$("#mensagemErroAlteracao").slideUp();
-			$("#mensagemInformeFiltro").slideUp();
-			$("#mensagemInformeDatas").slideUp();
-			$("#mensagemErroFiltro").slideUp();
-			$("#mensagemPreencherCliente").slideUp();
-			$("#mensagemPreencherBloco").slideUp();
-			$("#mensagemPreencherPavimento").slideUp();
-			$("#mensagemPreencherLocal").slideUp();
-			$("#mensagemPreencherEquipamento").slideUp();
-			$("#mensagemPreencherCamposCliente").slideUp();
-			$("#mensagemPreencherCamposBloco").slideUp();
-			$("#mensagemPreencherCamposPavimento").slideUp();
-			$("#mensagemPreencherCamposLocal").slideUp();
-			$("#mensagemPreencherCamposEquipamento").slideUp();
-			$("#mensagemSucessoInclusaoCliente").slideUp();
-			$("#mensagemSucessoInclusaoBloco").slideUp();
-			$("#mensagemSucessoInclusaoPavimento").slideUp();
-			$("#mensagemSucessoInclusaoLocal").slideUp();
-			$("#mensagemSucessoInclusaoEquipamento").slideUp();
 		}

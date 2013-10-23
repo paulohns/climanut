@@ -23,7 +23,8 @@ function alterarSistema(sistema){
 	$("#idSistema").val(sistema.idSistema);
 	
 }
-
+var otable;
+var dataTab;
 var anOpen = [];
 
 //CARREGA OS DADOS PARA A LISTA 
@@ -173,12 +174,11 @@ $(document).ready(function(){
 			
 			/* VALIDAR CAMPOS PARA CADASTRO */
 			$("#botaoIncluirCliente").click(function(){
-				
 				if($("#idCliente").val() == "" || $("#cliente").val() == ""){
 					$("#mensagemPreencherCamposCliente").slideDown();
 					return false;
-				}else if($("#idCliente").val()!= 0){
-					$("#mensagemErroInclusaoBloco").slideDown();
+				}else if($("#idCliente").val() == 0){
+					$("#mensagemInformeClienteCadastrado").slideDown();
 					return false;
 				}else{
 					
@@ -331,8 +331,7 @@ $(document).ready(function(){
 					$("#mensagemInformeDatas").slideDown();
 				
 				}else if($("#clientePesq").val() != "" || $("#agendadoPesq").is(":checked") != "" || $("#canceladoPesq").is(":checked") != "" || $("#fechadoPesq").is(":checked") != "" || $("#dataInicialPesq").val() != "" && $("#dataFinalPesq").val() != ""){
-					var otable;
-					var dataTab;
+					
 					chargeData();
 					LimparCampos("#formPesquisaFiltro");
 					$("#formPesquisa").slideDown();
@@ -355,53 +354,24 @@ $(document).ready(function(){
 				LimparMensagens();
 				
 			});
-			//$("#clienteBloco").attr('disabled','disabled');
 			$("#bloco").attr('disabled','disabled');
-			//$("#clientePavimento").attr('disabled','disabled');
 			$("#blocoPavimento").attr('disabled','disabled');
 			$("#pavimento").attr('disabled','disabled');
-			//$("#clienteLocal").attr('disabled','disabled');
 			$("#blocoLocal").attr('disabled','disabled');
 			$("#pavimentoLocal").attr('disabled','disabled');
 			$("#local").attr('disabled','disabled');
-			//$("#clienteEquipamento").attr('disabled','disabled');
 			$("#blocoEquipamento").attr('disabled','disabled');
 			$("#pavimentoEquipamento").attr('disabled','disabled');
 			$("#localEquipamento").attr('disabled','disabled');
 			$("#equipamento").attr('disabled','disabled');
 		
-			//AutocompleteCliente
-			$("#cliente").focus(function(){
-				autocompleteCliente("#cliente","#idCliente","PesquisarAutocompleteCliente");
-			});
-			//AutocompleteBloco
-			$("#clienteBloco").focus(function(){
-				autocompleteCliente("#clienteBloco","#idCliente","PesquisarAutocompleteCliente");
-			});
-			$("#bloco").focus(function(){
-				LimparMensagens();
-				autocompleteBlocoPorCliente("#bloco",$("idClienteBloco").val(),"PesquisarAutocompleteBlocoPorCliente");
-			});
-			//AutocompletePavimento
-			$("#clientePavimento").focus(function(){
-				autocompleteCliente("#clientePavimento","#idClientePavimento","PesquisarAutocompleteCliente");
-			});
+						
 			
-			//AutocompleteLocal
-			$("#clienteLocal").focus(function(){
-				autocompleteCliente("#clienteLocal","#idClienteLocal","PesquisarAutocompleteCliente");
-			});
-			
-			//AutocompleteEquipamento
-			$("#clienteEquipamento").focus(function(){
-				autocompleteCliente("#clienteEquipamento","#idClienteEquipamento","PesquisarAutocompleteCliente");
-			});
-			
-			/* RETIRA MENSAGEM DA TELA */
+			/* RETIRA MENSAGEM DA TELA E LIMPANDO CAMPOS*/
 			$(".campoTexto").keypress(function(){
 				LimparMensagens();
-				
 			});
+			
 			$("#botaoLimparCliente").click(function(){
 				LimparCampos("#formCliente");
 				LimparMensagens();
@@ -422,15 +392,5 @@ $(document).ready(function(){
 				LimparCampos("#formEquipamento");
 				LimparMensagens();
 			});
-			
-			$("#pavimento").change(function(){
-				LimparMensagens();
-			});
-			$("#local").change(function(){
-				LimparMensagens();
-			});
-			$("#equipamento").change(function(){
-				LimparMensagens();
-			});
-				
+		
 });
