@@ -5,8 +5,6 @@ import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -20,7 +18,6 @@ import org.hibernate.annotations.GenericGenerator;
  * */
 @Entity
 @Table( name = "tb_pessoa" )
-@Inheritance(strategy = InheritanceType.JOINED) 
 public class Pessoa {
 	
 	/**Código de identificação de pessoa */

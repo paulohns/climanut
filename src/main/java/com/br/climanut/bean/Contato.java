@@ -1,10 +1,16 @@
 package com.br.climanut.bean;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.ForeignKey;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
@@ -30,6 +36,11 @@ public class Contato {
 	
 	/** Telefone celular do contato. */
 	private String telefoneCelular;
+	
+	/** Cliente dono do contato */
+	@ForeignKey(name = "idCliente")
+	@OneToMany
+	private Cliente cliente;
 	
 	@Id
 	@GeneratedValue(generator="increment")
@@ -72,6 +83,16 @@ public class Contato {
 
 	public void setTelefoneCelular(String telefoneCelular) {
 		this.telefoneCelular = telefoneCelular;
+	}
+
+	@Access(AccessType.PROPERTY)
+	@OneToOne
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
 	} 
 
 }

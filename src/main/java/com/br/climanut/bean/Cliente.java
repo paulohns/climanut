@@ -6,7 +6,6 @@ import javax.persistence.AccessType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -32,20 +31,23 @@ public class Cliente{
 	@ForeignKey(name = "idPessoa")
 	private Pessoa pessoa;
 	
-	/** Identificação de contato. */
-	@ManyToOne
-	@ForeignKey(name = "idContato")
-	private Contato contato;
-	
-
 	/** Nome do ambiente. */
 	private String nomeAmbiente;
 	
 	/** Telefone ambiente. */
 	private String telefoneAmbiente;
 	
-	/** Endereço ambiente. */
-	private String enderecoAmbiente;
+	/** Rua ambiente. */
+	private String rua;
+	
+	/** Número do Endereço do ambiente. */
+	private String numero;
+	
+	/** Complemento do endereço do ambiente. */
+	private String complemento;
+	
+	/** Bairro do endereço do ambiente. */
+	private String bairro;
 	
 
 	@Id
@@ -54,16 +56,6 @@ public class Cliente{
 	public Integer getIdCliente() {
 		
 		return idCliente;
-	}
-
-	@Access(AccessType.PROPERTY)
-	@OneToOne
-	public Contato getContato() {
-		return contato;
-	}
-	
-	public void setContato(Contato contato) {
-		this.contato = contato;
 	}
 	
 	public void setIdCliente(Integer idCliente) {
@@ -86,14 +78,6 @@ public class Cliente{
 		this.telefoneAmbiente = telefoneAmbiente;
 	}
 
-	public String getEnderecoAmbiente() {
-		return enderecoAmbiente;
-	}
-
-	public void setEnderecoAmbiente(String enderecoAmbiente) {
-		this.enderecoAmbiente = enderecoAmbiente;
-	}
-
 	public void setPessoa(Pessoa pessoa) {
 		this.pessoa = pessoa;
 	}
@@ -102,6 +86,38 @@ public class Cliente{
 	@OneToOne
 	public Pessoa getPessoa() {
 		return pessoa;
+	}
+
+	public String getRua() {
+		return rua;
+	}
+
+	public void setRua(String rua) {
+		this.rua = rua;
+	}
+
+	public String getNumero() {
+		return numero;
+	}
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+	public String getComplemento() {
+		return complemento;
+	}
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
 	}
 	
 }
