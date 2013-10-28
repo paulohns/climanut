@@ -13,6 +13,6 @@ public class EquipamentosPorLocalDao extends GenericDAO<EquipamentosPorLocal>{
 	public EquipamentosPorLocalDao() {
 		super(EquipamentosPorLocal.class);
 	}
-
+	
 }
 

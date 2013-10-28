@@ -13,5 +13,6 @@ public class EquipamentoDao extends GenericDAO<Equipamento>{
 	public EquipamentoDao() {
 		super(Equipamento.class);
 	}
+
 }
 

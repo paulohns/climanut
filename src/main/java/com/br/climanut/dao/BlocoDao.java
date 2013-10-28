@@ -18,14 +18,13 @@ public class BlocoDao extends GenericDAO<Bloco>{
 		super(Bloco.class);
 	}
 	@SuppressWarnings("unchecked")
-	public List<Bloco> filter(Integer cliente) throws ParseException {
+	public List<Bloco> filterBloco(Integer idCliente) throws ParseException {
 		
 		Criteria criteria = session.createCriteria(Bloco.class, "bloco");
 		
-		if (cliente != null)
+		if (idCliente != null)
 			criteria.createAlias("bloco.cliente", "cliente")
-				.createAlias("cliente.pessoa", "pessoa")
-				.add(Restrictions.eqOrIsNull("pessoa.id", cliente));
+				.add(Restrictions.eqOrIsNull("cliente.id", idCliente));
 		
 		return criteria.list();
 	}
