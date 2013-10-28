@@ -26,11 +26,6 @@ public class Local {
 	
 	private String		descricaoLocal;
 	
-	/**Código do Bloco */
-	@OneToMany
-	@ForeignKey(name = "idBloco")
-	private Bloco bloco;
-	
 	/**Código do Pavimento */
 	@OneToMany
 	@ForeignKey(name = "idPavimento")
@@ -66,16 +61,7 @@ public class Local {
 	
 	/**Área climatizada em m³ */
 	private double		areaClimatizada;
-	
-	@Access(AccessType.PROPERTY)
-	@OneToOne
-	public Bloco getBloco() {
-		return bloco;
-	}
 
-	public void setBloco(Bloco bloco) {
-		this.bloco = bloco;
-	}
 	@Access(AccessType.PROPERTY)
 	@OneToOne
 	public Pavimento getPavimento() {
