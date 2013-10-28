@@ -79,7 +79,6 @@ public class EquipamentoFacade implements Serializable{
     	}
     }
 	
-
 	public List<Equipamento> findAll() throws ClimanutExceptions{
 
 		equipamentoDao = new EquipamentoDao();
@@ -89,5 +88,6 @@ public class EquipamentoFacade implements Serializable{
         
         return listaEquipamentos;
 	}
+	
 
 }
