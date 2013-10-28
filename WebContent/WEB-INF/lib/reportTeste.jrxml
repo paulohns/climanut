@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportTeste" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9c22ec60-6bfd-439d-927f-0a234aa993fb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT `enderecoAmbiente`, `nomeAmbiente`, `telefoneAmbiente` FROM `tb_cliente` WHERE 1]]>
+	</queryString>
+	<field name="enderecoAmbiente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomeAmbiente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefoneAmbiente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="nomeAmbiente">
+		<groupExpression><![CDATA[$F{nomeAmbiente}]]></groupExpression>
+	</group>
+	<group name="enderecoAmbiente">
+		<groupExpression><![CDATA[$F{enderecoAmbiente}]]></groupExpression>
+	</group>
+	<group name="telefoneAmbiente">
+		<groupExpression><![CDATA[$F{telefoneAmbiente}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="ad5f1cf4-f8d5-4b0a-994f-6b8fac5ba34a" x="0" y="16" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[ENDERECO]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="0cd4ec7d-3163-4316-8296-fe124bc29c94" x="118" y="20" width="356" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{enderecoAmbiente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="09c95f09-c6f3-4f22-b749-01e10dc372d3" x="0" y="56" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nome Ambiente]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="26ae1bc2-c883-4437-b4f0-df7bb3567a0d" x="118" y="56" width="356" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nomeAmbiente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="a39f5621-ee73-425b-a2bb-591b726098fa" x="0" y="93" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Telefone Ambiente]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="0c59a59a-0cdd-4525-b900-9d4bc7fb8d62" x="118" y="93" width="345" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{telefoneAmbiente}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

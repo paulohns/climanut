@@ -1,0 +1,985 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportAnvisa" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cb0c509a-5c4c-40ac-94f2-a26e52c7fe2a">
+	<property name="ireport.zoom" value="1.1"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="806"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Title" forecolor="#000000" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#E6F3FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 11">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 11_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 11_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 11_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 12">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 12_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 12_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 12_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 13">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 13_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 13_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 13_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 14">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 14_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 14_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 14_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 15">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 15_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 15_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 15_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 16">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 16_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 16_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 16_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 17">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 17_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 17_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 17_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 18">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 18_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 18_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 18_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 19">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 19_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 19_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 19_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 20">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 20_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 20_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 20_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 21">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 21_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 21_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 21_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 22">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 22_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 22_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 22_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 23">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 23_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 23_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 23_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" uuid="81389cd3-87c9-44f1-a0d2-41311c6ca0d0"/>
+	<subDataset name="IdentificacaoAmbiente" uuid="f02aaa3f-f661-40dc-955e-c5622662f98a">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     tb_cliente.`rua` AS tb_cliente_rua,
+     tb_cliente.`nomeAmbiente` AS tb_cliente_nomeAmbiente,
+     tb_cliente.`telefoneAmbiente` AS tb_cliente_telefoneAmbiente,
+     tb_cliente.`complemento` AS tb_cliente_complemento,
+     tb_cliente.`numero` AS tb_cliente_numero,
+     tb_cliente.`bairro` AS tb_cliente_bairro
+FROM
+     `tb_cliente` tb_cliente]]>
+		</queryString>
+		<field name="tb_cliente_rua" class="java.lang.String"/>
+		<field name="tb_cliente_nomeAmbiente" class="java.lang.String"/>
+		<field name="tb_cliente_telefoneAmbiente" class="java.lang.String"/>
+		<field name="tb_cliente_complemento" class="java.lang.String"/>
+		<field name="tb_cliente_numero" class="java.lang.String"/>
+		<field name="tb_cliente_bairro" class="java.lang.String"/>
+		<group name="tb_cliente_nomeAmbiente">
+			<groupExpression><![CDATA[$F{tb_cliente_nomeAmbiente}]]></groupExpression>
+		</group>
+		<group name="tb_cliente_rua">
+			<groupExpression><![CDATA[$F{tb_cliente_rua}]]></groupExpression>
+		</group>
+		<group name="tb_cliente_numero">
+			<groupExpression><![CDATA[$F{tb_cliente_numero}]]></groupExpression>
+		</group>
+		<group name="tb_cliente_complemento">
+			<groupExpression><![CDATA[$F{tb_cliente_complemento}]]></groupExpression>
+		</group>
+	</subDataset>
+	<subDataset name="IdentificacaoProp" uuid="2bd8020e-8429-4245-97cd-aa49f13e2365">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     tb_cliente.`pessoa_idPessoa` AS tb_cliente_pessoa_idPessoa,
+     tb_pessoa.`idPessoa` AS tb_pessoa_idPessoa,
+     tb_pessoa.`idFederal` AS tb_pessoa_idFederal,
+     tb_pessoa.`nome` AS tb_pessoa_nome,
+     tb_pessoa.`rua` AS tb_pessoa_rua,
+     tb_pessoa.`numero` AS tb_pessoa_numero,
+     tb_pessoa.`complemento` AS tb_pessoa_complemento,
+     tb_pessoa.`bairro` AS tb_pessoa_bairro,
+     tb_pessoa.`cidade_idCidade` AS tb_pessoa_cidade_idCidade,
+     tb_cidade.`nomeCidade` AS tb_cidade_nomeCidade,
+     tb_cidade.`estado_idEstado` AS tb_cidade_estado_idEstado,
+     tb_estado.`sigla` AS tb_estado_sigla
+FROM
+     `tb_pessoa` tb_pessoa INNER JOIN `tb_cliente` tb_cliente ON tb_pessoa.`idPessoa` = tb_cliente.`pessoa_idPessoa`
+     INNER JOIN `tb_cidade` tb_cidade ON tb_pessoa.`cidade_idCidade` = tb_cidade.`idCidade`
+     INNER JOIN `tb_estado` tb_estado ON tb_cidade.`estado_idEstado` = tb_estado.`idEstado`]]>
+		</queryString>
+		<field name="tb_cliente_pessoa_idPessoa" class="java.lang.Integer"/>
+		<field name="tb_pessoa_idPessoa" class="java.lang.Integer"/>
+		<field name="tb_pessoa_idFederal" class="java.lang.Long"/>
+		<field name="tb_pessoa_nome" class="java.lang.String"/>
+		<field name="tb_pessoa_rua" class="java.lang.String"/>
+		<field name="tb_pessoa_numero" class="java.lang.String"/>
+		<field name="tb_pessoa_complemento" class="java.lang.String"/>
+		<field name="tb_pessoa_bairro" class="java.lang.String"/>
+		<field name="tb_pessoa_cidade_idCidade" class="java.lang.Integer"/>
+		<field name="tb_cidade_nomeCidade" class="java.lang.String"/>
+		<field name="tb_cidade_estado_idEstado" class="java.lang.Integer"/>
+		<field name="tb_estado_sigla" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="IdentificacaoTecnico" uuid="07d8004d-6afb-4588-91e4-e9b82ca67bf9">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     tb_tecnico.`art` AS tb_tecnico_art,
+     tb_tecnico.`registro` AS tb_tecnico_registro,
+     tb_pessoa.`idFederal` AS tb_pessoa_idFederal,
+     tb_pessoa.`nome` AS tb_pessoa_nome,
+     tb_pessoa.`rua` AS tb_pessoa_rua,
+     tb_pessoa.`numero` AS tb_pessoa_numero,
+     tb_pessoa.`telefoneFixo` AS tb_pessoa_telefoneFixo
+FROM
+     `tb_pessoa` tb_pessoa INNER JOIN `tb_tecnico` tb_tecnico ON tb_pessoa.`idPessoa` = tb_tecnico.`pessoa_idPessoa`]]>
+		</queryString>
+		<field name="tb_tecnico_art" class="java.lang.Long"/>
+		<field name="tb_tecnico_registro" class="java.lang.Long"/>
+		<field name="tb_pessoa_idFederal" class="java.lang.Long"/>
+		<field name="tb_pessoa_nome" class="java.lang.String"/>
+		<field name="tb_pessoa_rua" class="java.lang.String"/>
+		<field name="tb_pessoa_numero" class="java.lang.String"/>
+		<field name="tb_pessoa_telefoneFixo" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="IdentificacaoLocal" uuid="598e720f-a421-43f8-935d-792acb6ae04e">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     tb_localizacao.`idLocalizacao` AS tb_localizacao_idLocalizacao,
+     tb_localizacao.`areaClimatizada` AS tb_localizacao_areaClimatizada,
+     tb_localizacao.`bloco` AS tb_localizacao_bloco,
+     tb_localizacao.`local` AS tb_localizacao_local,
+     tb_localizacao.`numeroEquipamento` AS tb_localizacao_numeroEquipamento,
+     tb_localizacao.`pavimento` AS tb_localizacao_pavimento,
+     tb_localizacao.`pessoasFixas` AS tb_localizacao_pessoasFixas,
+     tb_localizacao.`pessoasFlutuantes` AS tb_localizacao_pessoasFlutuantes,
+     tb_localizacao.`status` AS tb_localizacao_status,
+     tb_localizacao.`tipoAtividade` AS tb_localizacao_tipoAtividade,
+     tb_localizacao.`equipamento_idEquipamento` AS tb_localizacao_equipamento_idEquipamento,
+     tb_localizacao.`sistema_idSistema` AS tb_localizacao_sistema_idSistema,
+     tb_equipamento.`idEquipamento` AS tb_equipamento_idEquipamento,
+     tb_equipamento.`btu` AS tb_equipamento_btu
+FROM
+     `tb_equipamento` tb_equipamento INNER JOIN `tb_localizacao` tb_localizacao ON tb_equipamento.`idEquipamento` = tb_localizacao.`equipamento_idEquipamento`]]>
+		</queryString>
+		<field name="tb_localizacao_idLocalizacao" class="java.lang.Integer"/>
+		<field name="tb_localizacao_areaClimatizada" class="java.lang.Double"/>
+		<field name="tb_localizacao_bloco" class="java.lang.String"/>
+		<field name="tb_localizacao_local" class="java.lang.String"/>
+		<field name="tb_localizacao_numeroEquipamento" class="java.lang.Integer"/>
+		<field name="tb_localizacao_pavimento" class="java.lang.String"/>
+		<field name="tb_localizacao_pessoasFixas" class="java.lang.Integer"/>
+		<field name="tb_localizacao_pessoasFlutuantes" class="java.lang.Integer"/>
+		<field name="tb_localizacao_status" class="java.lang.Integer"/>
+		<field name="tb_localizacao_tipoAtividade" class="java.lang.String"/>
+		<field name="tb_localizacao_equipamento_idEquipamento" class="java.lang.Integer"/>
+		<field name="tb_localizacao_sistema_idSistema" class="java.lang.Integer"/>
+		<field name="tb_equipamento_idEquipamento" class="java.lang.Integer"/>
+		<field name="tb_equipamento_btu" class="java.lang.Double"/>
+	</subDataset>
+	<subDataset name="dataset1" uuid="74b42e8b-7e3a-4e5c-8ce0-0a4308c1b6a1"/>
+	<subDataset name="planoManutencaoAtividade" uuid="2eced062-15ed-4860-8bc7-e8e476cfc7b5">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     tb_atividadeanvisa.`idAtividadeAnvisa` AS tb_atividadeanvisa_idAtividadeAnvisa,
+     tb_atividadeanvisa.`descricaoAtividade` AS tb_atividadeanvisa_descricaoAtividade,
+     tb_atividadeanvisa.`periodicidadeManutencao` AS tb_atividadeanvisa_periodicidadeManutencao,
+     tb_agendaanvisa.`idAgendaAnvisa` AS tb_agendaanvisa_idAgendaAnvisa,
+     tb_agendaanvisa.`dataFinal` AS tb_agendaanvisa_dataFinal,
+     tb_agendaanvisa.`status` AS tb_agendaanvisa_status,
+     tb_agendaanvisa.`atividadeAnvisa_idAtividadeAnvisa` AS tb_agendaanvisa_atividadeAnvisa_idAtividadeAnvisa,
+     tb_agendaanvisa.`cliente_idCliente` AS tb_agendaanvisa_cliente_idCliente,
+     tb_manutencaoanvisa.`dataManutencaoAnvisa` AS tb_manutencaoanvisa_dataManutencaoAnvisa,
+     tb_manutencaoanvisa.`agendaAnvisa_idAgendaAnvisa` AS tb_manutencaoanvisa_agendaAnvisa_idAgendaAnvisa,
+     tb_manutencaoanvisa.`aprovador_idTecnico` AS tb_manutencaoanvisa_aprovador_idTecnico,
+     tb_manutencaoanvisa.`executador_idTecnico` AS tb_manutencaoanvisa_executador_idTecnico
+FROM
+     `tb_atividadeanvisa` tb_atividadeanvisa INNER JOIN `tb_agendaanvisa` tb_agendaanvisa ON tb_atividadeanvisa.`idAtividadeAnvisa` = tb_agendaanvisa.`atividadeAnvisa_idAtividadeAnvisa`
+     INNER JOIN `tb_manutencaoanvisa` tb_manutencaoanvisa ON tb_agendaanvisa.`idAgendaAnvisa` = tb_manutencaoanvisa.`agendaAnvisa_idAgendaAnvisa`]]>
+		</queryString>
+		<field name="tb_atividadeanvisa_idAtividadeAnvisa" class="java.lang.Integer"/>
+		<field name="tb_atividadeanvisa_descricaoAtividade" class="java.lang.String"/>
+		<field name="tb_atividadeanvisa_periodicidadeManutencao" class="java.lang.Integer"/>
+		<field name="tb_agendaanvisa_idAgendaAnvisa" class="java.lang.Integer"/>
+		<field name="tb_agendaanvisa_dataFinal" class="java.sql.Timestamp"/>
+		<field name="tb_agendaanvisa_status" class="java.lang.Integer"/>
+		<field name="tb_agendaanvisa_atividadeAnvisa_idAtividadeAnvisa" class="java.lang.Integer"/>
+		<field name="tb_agendaanvisa_cliente_idCliente" class="java.lang.Integer"/>
+		<field name="tb_manutencaoanvisa_dataManutencaoAnvisa" class="java.sql.Timestamp"/>
+		<field name="tb_manutencaoanvisa_agendaAnvisa_idAgendaAnvisa" class="java.lang.Integer"/>
+		<field name="tb_manutencaoanvisa_aprovador_idTecnico" class="java.lang.Integer"/>
+		<field name="tb_manutencaoanvisa_executador_idTecnico" class="java.lang.Integer"/>
+	</subDataset>
+	<subDataset name="dataset2" uuid="3e62407f-29b1-4296-9faa-184a2b629c89"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["C:\\Users\\PauloHenrique\\Desktop\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     tb_cliente.`pessoa_idPessoa` AS tb_cliente_pessoa_idPessoa,
+     tb_pessoa.`idPessoa` AS tb_pessoa_idPessoa,
+     tb_pessoa.`idFederal` AS tb_pessoa_idFederal,
+	tb_pessoa.`nome` AS tb_pessoa_nome,
+     tb_pessoa.`rua` AS tb_pessoa_rua,
+     tb_pessoa.`numero` AS tb_pessoa_numero,
+     tb_pessoa.`complemento` AS tb_pessoa_complemento,
+     tb_pessoa.`bairro` AS tb_pessoa_bairro,
+     tb_pessoa.`cidade_idCidade` AS tb_pessoa_cidade_idCidade,
+     tb_cidade.`nomeCidade` AS tb_cidade_nomeCidade,
+     tb_cidade.`estado_idEstado` AS tb_cidade_estado_idEstado,
+     tb_estado.`sigla` AS tb_estado_sigla
+FROM
+     `tb_pessoa` tb_pessoa INNER JOIN `tb_cliente` tb_cliente ON tb_pessoa.`idPessoa` = tb_cliente.`pessoa_idPessoa`
+     INNER JOIN `tb_cidade` tb_cidade ON tb_pessoa.`cidade_idCidade` = tb_cidade.`idCidade`
+     INNER JOIN `tb_estado` tb_estado ON tb_cidade.`estado_idEstado` = tb_estado.`idEstado`]]>
+	</queryString>
+	<field name="tb_cliente_pessoa_idPessoa" class="java.lang.Integer"/>
+	<field name="tb_pessoa_idPessoa" class="java.lang.Integer"/>
+	<field name="tb_pessoa_idFederal" class="java.lang.Long"/>
+	<field name="tb_pessoa_nome" class="java.lang.String"/>
+	<field name="tb_pessoa_rua" class="java.lang.String"/>
+	<field name="tb_pessoa_numero" class="java.lang.String"/>
+	<field name="tb_pessoa_complemento" class="java.lang.String"/>
+	<field name="tb_pessoa_bairro" class="java.lang.String"/>
+	<field name="tb_pessoa_cidade_idCidade" class="java.lang.Integer"/>
+	<field name="tb_cidade_nomeCidade" class="java.lang.String"/>
+	<field name="tb_cidade_estado_idEstado" class="java.lang.Integer"/>
+	<field name="tb_estado_sigla" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="180" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="dd5b1dd5-5695-4dd5-84c0-fba6bd784f2a" style="Title" x="192" y="51" width="361" height="24"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Irmão Leandro, 730 - Vila Lenzi - Jaraguá do Sul - SC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="249da955-fa20-4850-969c-9423464a6e4b" style="Title" x="194" y="26" width="361" height="25"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CENTRAL CLIMATIZAÇÃO]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="ba35287a-c5bd-4ccf-973f-04d22b014ad5" x="-2" y="-3" width="194" height="178"/>
+				<imageExpression><![CDATA["C:\\Users\\PauloHenrique\\Documents\\FACET\\TCC 2013\\DOC TCC\\logo climanut pequeno.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="e6a098fb-562a-448e-b39e-1c66f33de18b" style="Title" x="192" y="75" width="361" height="24"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[C.N.P.J.: 11.401.442/0001-66 | IE: 256003114 | IM:32240]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e8c45aa2-ab47-4904-bc15-cf564cbafef0" style="Title" x="192" y="123" width="361" height="24"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Solução em Climatização ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e731c63c-cc6d-4cf7-8ecb-ae2b621727b3" style="Title" x="194" y="99" width="361" height="24"/>
+				<textElement>
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Fone/Fax: (47)33700206 Cel.: (47) 91174301]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="155" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="5d20ec2a-9eb3-4d1b-8c3c-4cbf30bd41d7" style="Title" x="25" y="16" width="435" height="24"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[1 – Identificação do Ambiente ou Conjunto de Ambientes:]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement uuid="0918700a-bccc-4180-9735-b9fdb0d27d44" key="table 5" style="table 5" x="12" y="40" width="498" height="25"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="IdentificacaoAmbiente" uuid="a844b0d2-3f9d-425d-b55d-d9600f132b06">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="487" uuid="ad3fcda4-7126-4f09-ac8e-8014b60a0ed4">
+						<jr:detailCell style="table 5_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement uuid="b4eaf322-961d-4a49-8720-ee061dc56bb0" x="10" y="0" width="477" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{tb_cliente_nomeAmbiente}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement uuid="b71caa09-b7e0-4d33-84ac-765546876b55" key="table 6" style="table 6" x="12" y="65" width="498" height="27"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="IdentificacaoAmbiente" uuid="3518c092-cea9-46f1-9300-c7b0b00cad35">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="415" uuid="47a2b00e-3494-4ecb-ae0c-2e75f1702b69">
+						<jr:detailCell style="table 6_TD" height="22" rowSpan="1">
+							<textField>
+								<reportElement uuid="2b834874-8c91-4db8-a067-9d40c2dd6d8a" x="11" y="0" width="404" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{tb_cliente_rua}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="73" uuid="d0c04eec-ebc8-4bb8-ad06-d4a0fcba2bea">
+						<jr:detailCell style="table 6_TD" height="22" rowSpan="1">
+							<textField>
+								<reportElement uuid="b74aa910-db97-484a-8be5-4409682b522a" x="20" y="0" width="53" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{tb_cliente_numero}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement uuid="2341e7ae-c70d-49b9-ad48-c37fec2cfe16" key="table 7" style="table 7" x="12" y="92" width="498" height="25"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="IdentificacaoAmbiente" uuid="8fd92120-7e29-4002-aed7-9af20d236427">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="488" uuid="cb1f0a3b-4ef6-4d74-bcf5-46c110ad07af">
+						<jr:detailCell style="table 7_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement uuid="b5a935de-5985-4950-840a-f4c46d4302b8" x="11" y="0" width="464" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{tb_cliente_complemento}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<componentElement>
+				<reportElement uuid="cd6e2210-0ea8-441d-9615-cfe3bd03c9b1" key="table 8" style="table 8" x="12" y="117" width="498" height="23"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="IdentificacaoAmbiente" uuid="d5ec5b8a-50e3-4628-8caa-bf37cd7c0032">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="487" uuid="b79bf908-2422-40cc-82cd-755413288f18">
+						<jr:detailCell style="table 8_TD" height="20" rowSpan="1">
+							<textField>
+								<reportElement uuid="636b71cb-78f6-48cc-acf0-99e036111e54" x="11" y="0" width="189" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{tb_cliente_telefoneAmbiente}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+		<band height="133">
+			<staticText>
+				<reportElement uuid="1c5fceb2-9fe6-495b-95a4-4d280fea3ab8" style="Title" x="25" y="14" width="435" height="24"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[2 – Identificação do Proprietário, Locatário ou Preposto:]]></text>
+			</staticText>
+		</band>
+		<band height="125">
+			<staticText>
+				<reportElement uuid="a243c0db-1827-4792-bb6b-09f46d4d6c53" style="Title" x="25" y="14" width="435" height="24"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[3 – Identificação do Responsável Técnico:]]></text>
+			</staticText>
+		</band>
+		<band height="189">
+			<staticText>
+				<reportElement uuid="00b59eba-d8c4-469a-aba1-27a4f2576495" style="Title" x="25" y="13" width="435" height="24"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[4 – Relação dos Ambientes Climatizados:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="72f8077e-4a28-4e11-9337-75752b53001f" x="12" y="56" width="201" height="33"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="5071073a-30e5-46de-9aab-cde9b5d31d98" x="60" y="69" width="106" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Tipo de Atividade]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="cb901907-f20f-4b5b-86c7-2ff0d5034c6f" x="213" y="56" width="92" height="16"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="1d739f0e-72b2-4223-bad0-cbce2a8716b8" x="213" y="72" width="37" height="17"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="af7e6166-975f-439d-9e71-31cf263a6e34" x="250" y="72" width="55" height="17"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="f400a87c-94a7-43aa-98a2-57324630ed46" x="305" y="56" width="137" height="33"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="5abed82f-4d5a-4040-9821-2e8d24a76d06" x="442" y="56" width="84" height="33"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="176717a7-cb90-48ac-93b6-83976812eaa4" x="223" y="56" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[N° de Ocupantes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b10412a5-3e24-44d9-8056-0a0d2c8cc553" x="223" y="76" width="53" height="20"/>
+				<textElement/>
+				<text><![CDATA[Fixos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="885d1433-e447-4cc4-ac9c-4589ff78ab76" x="250" y="76" width="55" height="20"/>
+				<textElement/>
+				<text><![CDATA[  Flutuantes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="88ce2741-c1a2-4e1f-991d-a7fa16b3ed36" x="305" y="56" width="137" height="33"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Identificação do ambiente ou conjunto do ambinete]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="caee9400-2ecd-487c-8123-b2c766092bdd" x="442" y="69" width="84" height="40"/>
+				<textElement/>
+				<text><![CDATA[    Carga Térmica]]></text>
+			</staticText>
+		</band>
+		<band height="158">
+			<staticText>
+				<reportElement uuid="9cef1ddf-242d-4db3-aee5-f06b7b8c8229" style="Title" x="25" y="12" width="435" height="24"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[5 – Plano de Manutenção e Controle:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="1a1bd533-35b5-45f3-89cf-d80cc2a82a1e" x="25" y="54" width="156" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="8c981434-e0ef-4d3a-9ecb-ac3efcf89969" x="181" y="54" width="88" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="6793080e-0ce2-402a-908e-9c459b5e7738" x="269" y="54" width="91" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="3d156d4b-52c8-4c35-8fcf-6f91a21e3f79" x="360" y="54" width="82" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="056bbf8d-ee56-43a8-bdfd-717d8ddcbead" x="442" y="54" width="84" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="ecf305f0-935a-4795-b2ed-0b76dc42b2fa" x="25" y="73" width="501" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="b9d9e2fb-3a96-4f01-a56f-e486f697bcf9" x="169" y="74" width="263" height="20"/>
+				<textElement/>
+				<text><![CDATA[Condicionador de Ar (do tipo “expansão direta)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a1035f87-eb2d-422d-9661-883189a9f2a9" x="49" y="54" width="106" height="20"/>
+				<textElement/>
+				<text><![CDATA[Descrição da Atividade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="614c0ad8-08bc-46e3-acdb-4d7a11776f68" x="192" y="54" width="77" height="20"/>
+				<textElement/>
+				<text><![CDATA[Periodicidade]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4c4b717c-6938-4344-8af1-631789a5c831" x="276" y="54" width="91" height="39"/>
+				<textElement/>
+				<text><![CDATA[Data de Execução]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1c1bb1d6-d461-4d4e-8471-ed9dcdc0274a" x="367" y="55" width="91" height="39"/>
+				<textElement/>
+				<text><![CDATA[Executado por]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bef621c3-6041-47e6-87d8-dfc1da41d682" x="442" y="55" width="68" height="39"/>
+				<textElement/>
+				<text><![CDATA[  Aprovado por]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<summary>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="4628b217-69ce-4aeb-9053-1279e34ba03c" style="Title" x="60" y="0" width="435" height="24"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Central Climatização – Rua Irmão Leandro, 730 – Vila Lenzi – Jaraguá do Sul – SC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4e0efbbb-3b20-463d-9bf4-ae9c451f62db" style="Title" x="75" y="18" width="435" height="24"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[CNPJ: 11.401.442/0001-66 | IE: 256003114 | www.climacentral.com.br]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
