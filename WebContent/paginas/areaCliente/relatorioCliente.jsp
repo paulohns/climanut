@@ -8,6 +8,7 @@
 <link rel="StyleSheet" type="text/css" href="/climanut/css/jquery-ui.css" >
 <script type="text/javascript" src="/climanut/resources/jquery-1.8.0.js"></script>
 <script type="text/javascript" src="/climanut/resources/jquery-ui.js"></script>
+<script type="text/javascript" src="/climanut/resources/jquery.ui.autocomplete.js"></script>
 <title>Relatório</title>
 </head>
 <body>
