@@ -16,7 +16,7 @@
 <script type="text/javascript" src="/climanut/js/abrirFecharFormularioSistema.js"></script>
 <script type="text/javascript" src="/climanut/js/cadPesqSistema.js"></script>
 <script type="text/javascript" src="/climanut/js/limparCampos.js"></script>
-<script type="text/javascript" src="/climanut/js/autocompleteCliente.js"></script>
+<script type="text/javascript" src="/climanut/js/autocompleteSistema.js"></script>
 <title>Climanut - Sistema de ar</title>
 </head>
 

@@ -14,11 +14,6 @@ $(document).ready(function(){
 			$("#abrirP").show();
 				
 			$("#formCadastro").slideDown();
-			//$("#formCliente").slideDown();
-			//$("#formBloco").slideDown();
-			//$("#formPavimento").slideDown();
-			//$("#formLocal").slideDown();
-			//$("#formEquipamento").slideDown();
 			$("#abrirC").hide();
 			$("#fecharC").show();
 			/* AUMENTAR BASE PARA CADASTRO E PESQUISA */
@@ -77,12 +72,15 @@ $(document).ready(function(){
 			$("#abrirCliente").show();
 			$("#fecharCliente").hide();
 			/* VOLTA PARA HEIGHT ANTERIOR */
-			$("#formCadastro").animate({height:400},500);
+			$("#formCadastro").animate({height:350},500);
 			LimparMensagens();
+			LimparCampos($("#formCliente"));
 				
 		});
 		/* LOCALIZAÇÃO */	
 		$("#abrirBloco").click(function(){
+			//Desabilita os campos
+			$("#bloco").attr('disabled','disabled');
 			
 			/*FECHA TODOS QUE ESTIVEREM ABERTOS*/
 			$("#formCliente").slideUp();$("#abrirCliente").show();$("#fecharCliente").hide();
@@ -102,12 +100,16 @@ $(document).ready(function(){
 			$("#abrirBloco").show();
 			$("#fecharBloco").hide();
 			/* VOLTA PARA HEIGHT ANTERIOR */
-			$("#formCadastro").animate({height:400},500);
+			$("#formCadastro").animate({height:350},500);
 			LimparMensagens();
+			LimparCampos($("#formBloco"));
 				
 		});
 		$("#abrirPavimento").click(function(){
-				
+			//Desabilita os campos
+			$("#blocoPavimento").attr('disabled','disabled');
+			$("#pavimento").attr('disabled','disabled');
+			
 			/*FECHA TODOS QUE ESTIVEREM ABERTOS*/
 			$("#formCliente").slideUp();$("#abrirCliente").show();$("#fecharCliente").hide();
 			$("#formBloco").slideUp();$("#abrirBloco").show();$("#fecharBloco").hide();
@@ -127,19 +129,28 @@ $(document).ready(function(){
 			$("#abrirPavimento").show();
 			$("#fecharPavimento").hide();
 			/* VOLTA PARA HEIGHT ANTERIOR */
-			$("#formCadastro").animate({height:400},500);
+			$("#formCadastro").animate({height:350},500);
 			LimparMensagens();
+			LimparCampos($("#formPavimento"));
 						
 		});
 		$("#abrirLocal").click(function(){
-				
+			//Desabilita os campos
+			$("#blocoLocal").attr('disabled','disabled');
+			$("#pavimentoLocal").attr('disabled','disabled');
+			$("#local").attr('disabled','disabled');
+			$("#areaClimatizada").attr('disabled','disabled');
+			$("#pessoasFixas").attr('disabled','disabled');
+			$("#pessoasFlutuantes").attr('disabled','disabled');
+			$("#tipoAtividade").attr('disabled','disabled');
+			
 			/*FECHA TODOS QUE ESTIVEREM ABERTOS*/
 			$("#formCliente").slideUp();$("#abrirCliente").show();$("#fecharCliente").hide();
 			$("#formPavimento").slideUp();$("#abrirPavimento").show();$("#fecharPavimento").hide();
 			$("#formBloco").slideUp();$("#abrirBloco").show();$("#fecharBloco").hide();
 			$("#formEquipamento").slideUp();$("#abrirEquipamento").show();$("#fecharEquipamento").hide();
 			/* FORM CADASTRO 700px*/
-			$("#formCadastro").animate({height:700},500);
+			$("#formCadastro").animate({height:850},500);
 			$("#formLocal").slideDown();
 			$("#abrirLocal").hide();
 			$("#fecharLocal").show();
@@ -151,11 +162,18 @@ $(document).ready(function(){
 			$("#abrirLocal").show();
 			$("#fecharLocal").hide();
 			/* VOLTA PARA HEIGHT ANTERIOR */
-			$("#formCadastro").animate({height:400},500);
+			$("#formCadastro").animate({height:350},500);
 			LimparMensagens();
+			LimparCampos($("#formLocal"));
 				
 		});
 		$("#abrirEquipamento").click(function(){
+			//Desabilita os campos
+			$("#blocoEquipamento").attr('disabled','disabled');
+			$("#pavimentoEquipamento").attr('disabled','disabled');
+			$("#localEquipamento").attr('disabled','disabled');
+			$("#equipamento").attr('disabled','disabled');
+			$("#numeroInterno").attr('disabled','disabled');
 				
 			/*FECHA TODOS QUE ESTIVEREM ABERTOS*/
 			$("#formCliente").slideUp();$("#abrirCliente").show();$("#fecharCliente").hide();
@@ -175,8 +193,9 @@ $(document).ready(function(){
 			$("#abrirEquipamento").show();
 			$("#fecharEquipamento").hide();
 			/* VOLTA PARA HEIGHT ANTERIOR */
-			$("#formCadastro").animate({height:400},500);
+			$("#formCadastro").animate({height:350},500);
 			LimparMensagens();
+			LimparCampos($("#formEquipamento"));
 				
 		});
 		

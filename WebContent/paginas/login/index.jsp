@@ -16,7 +16,7 @@
 		
 			<input id="usuario" class="inputUser" name="usuario" type="text" maxlength="20" size="21" /><br/>
 			<input id="senha" class="inputSenha" name="senha" type="password" maxlength="10" size="11" ><br/><br/>
-			<a href="">Esqueci a senha!</a>
+			<a class="linkEsqueciSenha" href="">Esqueci a senha!</a>
 			<input id="botaoLogar" type="submit" name="acao" value="Entrar" class="botaoEntrar" >	
 		
 	</div>
@@ -25,6 +25,8 @@
 
 <script>
 $(document).ready(function(){
+	
+	$("input:text:eq(0):visible").focus();
 	
 	$("#usuario").keypress(function(){
 		$("#mensagemErroLogin").slideUp();
@@ -41,7 +43,7 @@ $(document).ready(function(){
 		}else{
 			 $.ajax({  
 			        type: "post",    
-			        url: "/climanut/ServletLogin",  
+			        url: "/climanut/ServletLogin", 
 			        dataType: "json",
 			        data: {  
 			        	usuario:$("#usuario").val(),

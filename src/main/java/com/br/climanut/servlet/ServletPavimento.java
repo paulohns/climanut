@@ -12,20 +12,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import com.br.climanut.bean.Bloco;
-import com.br.climanut.bean.Chamado;
 import com.br.climanut.bean.Cliente;
-import com.br.climanut.bean.Contato;
-import com.br.climanut.bean.Pessoa;
-import com.br.climanut.facade.ChamadoFacade;
+import com.br.climanut.bean.Pavimento;
 import com.br.climanut.facade.ClienteFacade;
 import com.br.climanut.facade.SistemaFacade;
 import com.br.climanut.utils.ClimanutExceptions;
-import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
@@ -34,8 +28,8 @@ import com.google.gson.JsonObject;
 /**
  * Servlet implementation class ServletCliente
  */
-@WebServlet("/ServletBloco")
-public class ServletBloco extends HttpServlet {
+@WebServlet("/ServletPavimento")
+public class ServletPavimento extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -56,42 +50,42 @@ public class ServletBloco extends HttpServlet {
 
 		String operacao = request.getParameter("acao");
 		System.out.println(operacao);
-		if (operacao.equals("IncluirBloco")) {
-			incluirBloco(request, response);
+		if (operacao.equals("IncluirPavimento")) {
+			incluirPavimento(request, response);
 		}
-		if (operacao.equals("AlterarBloco")) {
-			alterarBloco(request, response);
+		if (operacao.equals("AlterarPavimento")) {
+			alterarPavimento(request, response);
 		}
-		if (operacao.equals("ExcluirBloco")) {
-			excluirBloco(request, response);
+		if (operacao.equals("ExcluirPavimento")) {
+			excluirPavimento(request, response);
 		}
-		if (operacao.equals("PesquisarBloco")) {
-			pesquisarBloco(request, response);
+		if (operacao.equals("PesquisarPavimento")) {
+			pesquisarPavimento(request, response);
 		}
-		if (operacao.equals("PesquisarAutocompleteBlocoPorCliente")) {
+		if (operacao.equals("PesquisarAutocompletePavimentoPorBloco")) {
 			String termo = request.getParameter("termo");
-			String campoIdCliente = request.getParameter("idCliente");
-			System.out.println("campoIdCliente:"+campoIdCliente);
-			int idCliente = Integer.valueOf(campoIdCliente);
-			System.out.println("IdCliente:"+idCliente);
+			String campoIdBlocoPavimento = request.getParameter("idBlocoPavimento");
+			System.out.println("campoIdBlocoPavimento:"+campoIdBlocoPavimento);
+			int idBloco = Integer.valueOf(campoIdBlocoPavimento);
+			System.out.println("idBloco:"+idBloco);
 			try {
-				autocompleteBlocoPorCliente(request, response, operacao,termo,idCliente);
+				autocompletePavimentoPorBloco(request, response, operacao,termo,idBloco);
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
 		}
 	}
 
-	private void autocompleteBlocoPorCliente(HttpServletRequest request,HttpServletResponse response, String operacao, String termo,Integer idCliente) throws IOException, JSONException {
+	private void autocompletePavimentoPorBloco(HttpServletRequest request,HttpServletResponse response, String operacao, String termo,Integer idBloco) throws IOException, JSONException {
 		try {
-			List<Bloco> listaBlocos = new ArrayList<Bloco>();
+			List<Pavimento> listaPavimentos = new ArrayList<Pavimento>();
 			JsonArray array = new JsonArray();
 			JsonObject jsonObject;
 			SistemaFacade sistemaFacade = new SistemaFacade();
 			
 			
 			try {
-				listaBlocos = sistemaFacade.filterBloco(idCliente);
+				listaPavimentos = sistemaFacade.filterPavimento(idBloco);
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}
@@ -99,16 +93,16 @@ public class ServletBloco extends HttpServlet {
 			
 			
 	        termo = termo.toLowerCase();
-	        String [] nomesCliente = new String [listaBlocos.size()];
+	        String [] nomesCliente = new String [listaPavimentos.size()];
 	        
-	        for (int i = 0; i < listaBlocos.size(); i++) {
-	        	String nomes = listaBlocos.get(i).getDescricaoBloco().toLowerCase();
+	        for (int i = 0; i < listaPavimentos.size(); i++) {
+	        	String nomes = listaPavimentos.get(i).getDescricaoPavimento().toLowerCase();
 	        	if(nomes.startsWith(termo)){
-	        		System.out.println(listaBlocos.get(i).getDescricaoBloco());
-	        		nomesCliente[i] = listaBlocos.get(i).getDescricaoBloco();
+	        		System.out.println(listaPavimentos.get(i).getDescricaoPavimento());
+	        		nomesCliente[i] = listaPavimentos.get(i).getDescricaoPavimento();
 	        		jsonObject = new JsonObject();
-	        		jsonObject.addProperty("id",listaBlocos.get(i).getIdBloco());
-	        		jsonObject.addProperty("nome",listaBlocos.get(i).getDescricaoBloco());
+	        		jsonObject.addProperty("id",listaPavimentos.get(i).getIdPavimento());
+	        		jsonObject.addProperty("nome",listaPavimentos.get(i).getDescricaoPavimento());
 	        		array.add(jsonObject);
 	        	}
 			}
@@ -124,32 +118,32 @@ public class ServletBloco extends HttpServlet {
 		}
 	}
 
-	private void incluirBloco(HttpServletRequest request,HttpServletResponse response) {
+	private void incluirPavimento(HttpServletRequest request,HttpServletResponse response) {
 		
 	}
 
-	private void alterarBloco(HttpServletRequest request,HttpServletResponse response) {
+	private void alterarPavimento(HttpServletRequest request,HttpServletResponse response) {
 
 	}
-	/* SÓ PODERÁ EXCLUIR CLIENTE SE O MESMO NÃO TIVER RELACIONAMENTO */
-	private void excluirBloco(HttpServletRequest request,HttpServletResponse response) {
+	/* SÓ PODERÁ EXCLUIR PAVIMENTO SE O MESMO NÃO TIVER RELACIONAMENTO */
+	private void excluirPavimento(HttpServletRequest request,HttpServletResponse response) {
 		
-		Bloco bloco = new Bloco();
+		Pavimento pavimento = new Pavimento();
 		SistemaFacade sistemaFacade = new SistemaFacade();
 		
-		String campoIdBloco = request.getParameter("idBloco");
-		int idBloco = Integer.valueOf(campoIdBloco);
+		String campoIdClientePavimento = request.getParameter("idClientePavimento");
+		int idCliente = Integer.valueOf(campoIdClientePavimento);
 		
 		try {
-			bloco = sistemaFacade.findBloco(idBloco);
-			sistemaFacade.deleteBloco(bloco);
+			pavimento = sistemaFacade.findPavimento(idCliente);
+			sistemaFacade.deletePavimento(pavimento);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	private void pesquisarBloco(HttpServletRequest request,HttpServletResponse response) {
+	private void pesquisarPavimento(HttpServletRequest request,HttpServletResponse response) {
 		/* NÃO TERÁ FILTROS */
 	}
 }

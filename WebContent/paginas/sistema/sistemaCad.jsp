@@ -5,11 +5,11 @@
 			<span id="corTitulo" class="alterarTitulo" style="display:none;"> Alterar Sistema</span>
 			<jsp:include page="../botoes/abrirFecharC.jsp"></jsp:include>
 			
-			<div id="formCadastro" style="height:400px;"><br><br>
+			<div id="formCadastro" style="height:350px;"><br><br>
 				<span id="corTitulo" style="margin-left:50px;">&there4; Incluir Cliente</span>
 				<jsp:include page="../botoes/abrirFecharCliente.jsp"></jsp:include>
 				
-				<div id="formCliente" style="height:220px;">
+				<div id="formCliente" style="height:250px;">
 				<input name="idCliente" id="idCliente" type="hidden" /><br>
 				<label>Cliente:</label><span id="asterisco">*</span><br>
 				<input id="cliente" name="cliente" class="campoTexto" type="text" size="50" /><br><br><br>
@@ -22,9 +22,8 @@
 				<span id="corTitulo" style="margin-left:50px;">&there4; Incluir Bloco</span>
 				<jsp:include page="../botoes/abrirFecharBloco.jsp"></jsp:include>
 				
-				<div id="formBloco" style="height:220px;"><br>
+				<div id="formBloco" style="height:270px;"><br>
 					<input name="idClienteBloco" id="idClienteBloco" type="hidden" />
-					<input name="idBloco" id="idBloco" type="hidden" />
 					<label>Cliente:</label><span id="asterisco">*</span><br>
 					<input id="clienteBloco" name="clienteBloco" class="campoTexto" type="text" size="50" /><br>
 					<label>Bloco:</label><span id="asterisco">*</span><br>
@@ -42,10 +41,9 @@
 				<input type="submit" id="abrirPavimento" value="+" />
 				<input type="submit" id="fecharPavimento" value="-" /><br><br>
 				
-				<div id="formPavimento" style="height:250px;"><br>
+				<div id="formPavimento" style="height:300px;"><br>
 					<input name="idClientePavimento" id="idClientePavimento" type="hidden" />
 					<input name="idBlocoPavimento" id="idBlocoPavimento" type="hidden" />
-					<input name="idPavimento" id="idPavimento" type="hidden" />
 					<label>Cliente:</label><span id="asterisco">*</span><br>
 					<input id="clientePavimento" name="clientePavimento" class="campoTexto" type="text" size="50" /><br>
 					<label>Bloco:</label><span id="asterisco">*</span><br>
@@ -62,18 +60,26 @@
 				</div>
 				<span id="corTitulo" style="margin-left:50px;">&there4; Incluir Local</span>
 				<jsp:include page="../botoes/abrirFecharLocal.jsp"></jsp:include>
-				<div id="formLocal" style="height:300px;"><br>
+				<div id="formLocal" style="height:500px;"><br>
 					<input name="idClienteLocal" id="idClienteLocal" type="hidden" />
-					<input name="idBloco" id="idBloco" type="hidden" />
-					<input name="idPavimento" id="idPavimento" type="hidden" />
+					<input name="idBlocoLoca" id="idBlocoLocal" type="hidden" />
+					<input name="idPavimentoLocal" id="idPavimentoLocal" type="hidden" />
 					<label>Cliente:</label><span id="asterisco">*</span><br>
 					<input id="clienteLocal" name="clienteLocal" class="campoTexto" type="text" size="50" /><br>
 					<label>Bloco:</label><span id="asterisco">*</span><br>
-					<select id="blocosLocal" name="blocosLocal" class="campoTexto"></select> <br>
+					<input id="blocoLocal" name="blocoLocal" class="campoTexto" size="50" /><br>
 					<label>Pavimento:</label><span id="asterisco">*</span><br>
-					<select id="pavimentosLocal" name="pavimentosLocal" class="campoTexto"></select> <br>
+					<input id="pavimentoLocal" name="pavimentoLocal" class="campoTexto" size="50" /><br>
 					<label>Local:</label><span id="asterisco">*</span><br>
-					<input id="local" name="local"  class="campoTexto" type="text" size="50" /><br><br>
+					<input id="local" name="local"  class="campoTexto" type="text" size="50" /><br>
+					<label>Área climatizada:</label><span id="asterisco">*</span><br>
+					<input id="areaClimatizada" name="areaClimatizada"  class="campoTexto" type="text" size="50" /><br>
+					<label>Pessoas fixas:</label><span id="asterisco">*</span><br>
+					<input id="pessoasFixas" name="pessoasFixas"  class="campoTexto" type="text" size="50" /><br>
+					<label>Pessoas flutuantes:</label><span id="asterisco">*</span><br>
+					<input id="pessoasFlutuantes" name="pessoasFlutuantes"  class="campoTexto" type="text" size="50" /><br>
+					<label>Tipo de atividade:</label><span id="asterisco">*</span><br>
+					<input id="tipoAtividade" name="tipoAtividade"  class="campoTexto" type="text" size="50" /><br><br>
 					
 					<input id="botaoIncluirLocal" class="botao" type="submit" value="Incluir">
 					<!-- Apenas poderá alterar para inativo -->
@@ -85,34 +91,31 @@
 				<span id="corTitulo" style="margin-left:50px;">&there4; Incluir Equipamento</span>
 				
 				<jsp:include page="../botoes/abrirFecharEquipamento.jsp"></jsp:include>
-				<div id="formEquipamento" style="height:400px;"><br>
+				<div id="formEquipamento" style="height:450px;"><br>
 					<input name="idClienteEquipamento" id="idClienteEquipamento" type="hidden" />
-					<input name="idBloco" id="idBloco" type="hidden" />
-					<input name="idPavimento" id="idPavimento" type="hidden" />
-					<input name="idLocal" id="idLocal" type="hidden" />
+					<input name="idBlocoEquipamento" id="idBlocoEquipamento" type="hidden" />
+					<input name="idPavimentoEquipamento" id="idPavimentoEquipamento" type="hidden" />
+					<input name="idLocalEquipamento" id="idLocalEquipamento" type="hidden" />
+					<input name="idEquipamento" id="idEquipamento" type="hidden" />
 					
 					<label>Cliente:</label><span id="asterisco">*</span><br>
-					<input id="clienteEquipamento" name="clientePavimento" class="campoTexto" type="text" size="50" /><br>
+					<input id="clienteEquipamento" name="clienteEquipamento" class="campoTexto" type="text" size="50" /><br>
 					<label>Bloco:</label><span id="asterisco">*</span><br>
-					<select id="blocosEquipamento" name="blocosEquipamento" class="campoTexto">
-					</select> <br>
+					<input id="blocoEquipamento" name="blocoEquipamento" class="campoTexto" type="text" size="50" /><br>
 					<label>Pavimento:</label><span id="asterisco">*</span><br>
-					<select id="pavimentosEquipamento" name="pavimentosEquipamento" class="campoTexto">
-					</select> <br>
+					<input id="pavimentoEquipamento" name="pavimentoEquipamento" class="campoTexto" type="text" size="50" /><br>
 					<label>Local:</label><span id="asterisco">*</span><br>
-					<select id="locaisEquipamento" name="locaisEquipamento" class="campoTexto">
-					</select><br>
-					<label>Nº interno do Equipamento:</label><span id="asterisco">*</span><br>
-					<input id="equipamento" name="equipamento"  class="campoTexto" type="text" size="20" /><br>
+					<input id="localEquipamento" name="localEquipamento" class="campoTexto" type="text" size="50" /><br>
 					<label>Equipamento:</label><span id="asterisco">*</span><br>
-					<select id="equipamentos" name="equipamentos" class="campoTexto">
-					</select><br><br>
+					<input id="equipamento" name="equipamento" class="campoTexto" type="text" size="50" /><br>
+					<label>Nº interno do Equipamento:</label>
+					<input id="numeroInterno" name="numeroInterno" class="campoTexto" type="text" size="50" /><br><br>
 					
 					<input id="botaoIncluirEquipamento" class="botaoIncluir" type="submit" value="Incluir">
 					<!-- Apenas poderá alterar para inativo -->
 					<input id="botaoAlterarEquipamento" class="botaoAlterar" name="acao"  type="submit" value="Alterar" style="display:none;">
 					<input id="botaoLimparEquipamento" class="botao" type="reset" value="Limpar"><br><br>
-					<jsp:include page="../mensagens/mensagensEquipamento.jsp"></jsp:include>	
+					<jsp:include page="../mensagens/mensagensEquipamento.jsp"></jsp:include>
 				
 				</div>
 				

@@ -45,12 +45,11 @@ $(document).ready(function(){
                  success: function(json){
                    var options = '<option value="0">Selecione</option>';
                     $.each(json, function(key,value){
-                    	//console.log(key);
-                    	//console.log(value);
                     	options += '<option value="' + value.sigla + '">' + value.nomeEstado + '</option>';
                     });
                     $("#estados").html(options);
                  },
+                 
                  error:function(){  
                      alert("Erro ao encontrar Estados!"); 
                  }  

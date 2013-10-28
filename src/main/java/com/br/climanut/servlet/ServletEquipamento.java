@@ -2,6 +2,8 @@ package com.br.climanut.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -10,8 +12,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.json.JSONException;
+
 import com.br.climanut.bean.Equipamento;
+import com.br.climanut.bean.Local;
 import com.br.climanut.facade.EquipamentoFacade;
+import com.br.climanut.facade.SistemaFacade;
 import com.br.climanut.utils.ClimanutExceptions;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -63,11 +69,57 @@ public class ServletEquipamento extends HttpServlet {
 				}else if(operacao.equalsIgnoreCase("Pesquisar")){
 					pesquisarEquipamento(request, response);
 				}	
+				else if(operacao.equalsIgnoreCase("PesquisarAutocompleteEquipamento")){
+					
+					autocompleteEquipamento(request, response);
+				}	
 			}
 		} catch (Exception e) {
 			System.out.println("Erro");
 			e.printStackTrace();
 		}
+		
+	}
+	private void autocompleteEquipamento(HttpServletRequest request,HttpServletResponse response) throws IOException {
+		
+		try {
+			
+			String termo = request.getParameter("termo");
+			System.out.println("Termo:"+ termo);
+			
+			List<Equipamento> listaEquipamentos = new ArrayList<Equipamento>();
+			JsonArray array = new JsonArray();
+			JsonObject jsonObject;
+			equipamentoFacade = new EquipamentoFacade();
+			
+			
+			listaEquipamentos = equipamentoFacade.findAll();
+			
+	        termo = termo.toLowerCase();
+	        String [] nomesEquipamentos = new String [listaEquipamentos.size()];
+	        
+	        for (int i = 0; i < listaEquipamentos.size(); i++) {
+	        	String nomes = listaEquipamentos.get(i).getMarca().toLowerCase();
+	        	if(nomes.startsWith(termo)){
+	        		System.out.println(listaEquipamentos.get(i).getMarca());
+	        		nomesEquipamentos[i] = listaEquipamentos.get(i).getMarca();
+	        		jsonObject = new JsonObject();
+	        		jsonObject.addProperty("id",listaEquipamentos.get(i).getIdEquipamento());
+	        		jsonObject.addProperty("nome","Marca:"+listaEquipamentos.get(i).getMarca()+" - Modelo:"+listaEquipamentos.get(i).getModelo());
+	        		array.add(jsonObject);
+	        	}
+			}
+	        
+	        System.out.println("Array:"+array);
+
+			PrintWriter out = response.getWriter();
+	        response.setContentType("text/text;charset=utf-8");
+	        out.println(array.toString());
+	        out.close();
+		} catch (ClimanutExceptions e) {
+			e.printStackTrace();
+		}
+
 		
 	}
 	private void incluirEquipamento(HttpServletRequest request,HttpServletResponse response) {

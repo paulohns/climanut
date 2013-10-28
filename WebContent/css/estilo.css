@@ -247,6 +247,14 @@ a{
 	font-size:12px;
 	
 }
+a.linkEsqueciSenha{
+	margin-left:70px;
+	font-size:12px;
+	color:#55BF00;
+}
+a.linkEsqueciSenha:hover{
+	color:#534741;
+}
 #sair{
 	font-size:14px;
 	margin-left:100px;

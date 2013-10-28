@@ -12,20 +12,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
 import com.br.climanut.bean.Bloco;
-import com.br.climanut.bean.Chamado;
-import com.br.climanut.bean.Cliente;
-import com.br.climanut.bean.Contato;
-import com.br.climanut.bean.Pessoa;
-import com.br.climanut.facade.ChamadoFacade;
-import com.br.climanut.facade.ClienteFacade;
+import com.br.climanut.bean.Local;
 import com.br.climanut.facade.SistemaFacade;
 import com.br.climanut.utils.ClimanutExceptions;
-import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
@@ -34,8 +26,8 @@ import com.google.gson.JsonObject;
 /**
  * Servlet implementation class ServletCliente
  */
-@WebServlet("/ServletBloco")
-public class ServletBloco extends HttpServlet {
+@WebServlet("/ServletLocal")
+public class ServletLocal extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -56,42 +48,42 @@ public class ServletBloco extends HttpServlet {
 
 		String operacao = request.getParameter("acao");
 		System.out.println(operacao);
-		if (operacao.equals("IncluirBloco")) {
-			incluirBloco(request, response);
+		if (operacao.equals("IncluirLocal")) {
+			incluirLocal(request, response);
 		}
-		if (operacao.equals("AlterarBloco")) {
-			alterarBloco(request, response);
+		if (operacao.equals("AlterarLocal")) {
+			alterarLocal(request, response);
 		}
-		if (operacao.equals("ExcluirBloco")) {
-			excluirBloco(request, response);
+		if (operacao.equals("ExcluirLocal")) {
+			excluirLocal(request, response);
 		}
-		if (operacao.equals("PesquisarBloco")) {
-			pesquisarBloco(request, response);
+		if (operacao.equals("PesquisarLocal")) {
+			pesquisarLocal(request, response);
 		}
-		if (operacao.equals("PesquisarAutocompleteBlocoPorCliente")) {
+		if (operacao.equals("PesquisarAutocompleteLocalPorPavimento")) {
 			String termo = request.getParameter("termo");
-			String campoIdCliente = request.getParameter("idCliente");
-			System.out.println("campoIdCliente:"+campoIdCliente);
-			int idCliente = Integer.valueOf(campoIdCliente);
-			System.out.println("IdCliente:"+idCliente);
+			String campoIdPavimento = request.getParameter("idPavimentoEquipamento");
+			System.out.println("campoIdPavimento:"+campoIdPavimento);
+			int idPavimento = Integer.valueOf(campoIdPavimento);
+			System.out.println("idPavimento:"+idPavimento);
 			try {
-				autocompleteBlocoPorCliente(request, response, operacao,termo,idCliente);
+				autocompleteLocalPorPavimento(request, response, operacao,termo,idPavimento);
 			} catch (JSONException e) {
 				e.printStackTrace();
 			}
 		}
 	}
 
-	private void autocompleteBlocoPorCliente(HttpServletRequest request,HttpServletResponse response, String operacao, String termo,Integer idCliente) throws IOException, JSONException {
+	private void autocompleteLocalPorPavimento(HttpServletRequest request,HttpServletResponse response, String operacao, String termo,Integer idPavimento) throws IOException, JSONException {
 		try {
-			List<Bloco> listaBlocos = new ArrayList<Bloco>();
+			List<Local> listaLocais = new ArrayList<Local>();
 			JsonArray array = new JsonArray();
 			JsonObject jsonObject;
 			SistemaFacade sistemaFacade = new SistemaFacade();
 			
 			
 			try {
-				listaBlocos = sistemaFacade.filterBloco(idCliente);
+				listaLocais = sistemaFacade.filterLocal(idPavimento);
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}
@@ -99,16 +91,16 @@ public class ServletBloco extends HttpServlet {
 			
 			
 	        termo = termo.toLowerCase();
-	        String [] nomesCliente = new String [listaBlocos.size()];
+	        String [] nomesLocais = new String [listaLocais.size()];
 	        
-	        for (int i = 0; i < listaBlocos.size(); i++) {
-	        	String nomes = listaBlocos.get(i).getDescricaoBloco().toLowerCase();
+	        for (int i = 0; i < listaLocais.size(); i++) {
+	        	String nomes = listaLocais.get(i).getDescricaoLocal().toLowerCase();
 	        	if(nomes.startsWith(termo)){
-	        		System.out.println(listaBlocos.get(i).getDescricaoBloco());
-	        		nomesCliente[i] = listaBlocos.get(i).getDescricaoBloco();
+	        		System.out.println(listaLocais.get(i).getDescricaoLocal());
+	        		nomesLocais[i] = listaLocais.get(i).getDescricaoLocal();
 	        		jsonObject = new JsonObject();
-	        		jsonObject.addProperty("id",listaBlocos.get(i).getIdBloco());
-	        		jsonObject.addProperty("nome",listaBlocos.get(i).getDescricaoBloco());
+	        		jsonObject.addProperty("id",listaLocais.get(i).getIdLocal());
+	        		jsonObject.addProperty("nome",listaLocais.get(i).getDescricaoLocal());
 	        		array.add(jsonObject);
 	        	}
 			}
@@ -124,15 +116,15 @@ public class ServletBloco extends HttpServlet {
 		}
 	}
 
-	private void incluirBloco(HttpServletRequest request,HttpServletResponse response) {
+	private void incluirLocal(HttpServletRequest request,HttpServletResponse response) {
 		
 	}
 
-	private void alterarBloco(HttpServletRequest request,HttpServletResponse response) {
+	private void alterarLocal(HttpServletRequest request,HttpServletResponse response) {
 
 	}
 	/* SÓ PODERÁ EXCLUIR CLIENTE SE O MESMO NÃO TIVER RELACIONAMENTO */
-	private void excluirBloco(HttpServletRequest request,HttpServletResponse response) {
+	private void excluirLocal(HttpServletRequest request,HttpServletResponse response) {
 		
 		Bloco bloco = new Bloco();
 		SistemaFacade sistemaFacade = new SistemaFacade();
@@ -149,7 +141,7 @@ public class ServletBloco extends HttpServlet {
 		}
 	}
 
-	private void pesquisarBloco(HttpServletRequest request,HttpServletResponse response) {
+	private void pesquisarLocal(HttpServletRequest request,HttpServletResponse response) {
 		/* NÃO TERÁ FILTROS */
 	}
 }

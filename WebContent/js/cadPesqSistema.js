@@ -185,14 +185,21 @@ $(document).ready(function(){
 					$.ajax({  
 				        type: "post",    
 				        url: "/climanut/ServletSistema", 
+				        dataType: "json",
 				        data: {
 				        	idCliente: $("#idCliente").val(),
 				        	acao:"IncluirCliente"
 				        	
 				        },  
-				        success: function(result){    
-				           LimparCampos("#formCliente");
-				           $("#mensagemSucessoInclusaoCliente").slideDown();
+				        success: function(result){
+				        	console.log("result.msg:"+result.msg);
+				        	if(result.msg == 'erro'){
+				        		console.log("entrei no erro!");
+				        		 $("#mensagemClienteJaCadastrado").slideDown(); 
+				        	}else if(result.msg == 'ok'){
+				        		$("#mensagemSucessoInclusaoCliente").slideDown();
+				        		LimparCampos("#formCadastro");
+				        	}
 				        },
 		                 error:function(){
 		                   $("#mensagemErroInclusaoCliente").slideDown();   
@@ -207,27 +214,29 @@ $(document).ready(function(){
 				if($("#idClienteBloco").val()== "" || $("#clienteBloco").val()== "" ||$("#bloco").val() == "" ){
 					$("#mensagemPreencherCamposBloco").slideDown();
 					return false;
-				}else if($("#idBloco").val()!= 0){
-					$("#mensagemErroInclusaoBloco").slideDown();
-					return false;
 				}else{
 					$.ajax({  
 				        type: "post",    
 				        url: "/climanut/ServletSistema", 
+				        dataType: "json",
 				        data: {
 				        	idCliente: $("#idClienteBloco").val(), 
 				        	bloco: $("#bloco").val(),  
 				        	acao:"IncluirBloco"
 				        	
 				        },  
-				        success: function(result){     
-				           idClienteBloco = null;
-				           LimparCampos("#formCadastro");
-				           $("#mensagemSucessoInclusaoBloco").slideDown();
-				           $("#bloco").attr('disabled','disabled');
+				        success: function(result){
+				        	if(result.msg == 'erro'){
+				        		 $("#mensagemBlocoJaCadastrado").slideDown(); 
+				        	}else if(result.msg == 'ok'){
+				        		 LimparCampos("#formCadastro");
+				        		 $("#mensagemSucessoInclusaoBloco").slideDown();
+						         $("#bloco").attr('disabled','disabled');
+				        	}
 				        },
 		                 error:function(){
-		                	$("#mensagemErroInclusaoBloco").slideDown();
+		                	//$("#mensagemErroInclusaoBloco").slideDown();
+		                	 $("#mensagemBlocoJaCadastrado").slideDown();
 		                 }      
 				    });
 				}
@@ -235,7 +244,9 @@ $(document).ready(function(){
 			
 			$("#botaoIncluirPavimento").click(function(){
 				
-				if($("#idClientePavimento").val() == "" || $("#clientePavimento").val() == "" || $("#idBlocoPavimento").val() == "" || $("#pavimento").val() == ""){
+				console.log("idClientePavimento-Incluir>>>"+$("#idClientePavimento").val());
+				
+				if($("#idClientePavimento").val() == "" || $("#clientePavimento").val() == "" || $("#pavimento").val() == ""){
 					$("#mensagemPreencherCamposPavimento").slideDown();
 				return false;
 				}else{
@@ -243,19 +254,27 @@ $(document).ready(function(){
 					$.ajax({  
 				        type: "post",    
 				        url: "/climanut/ServletSistema", 
+				        dataType: "json",
 				        data: {
-				        	idCliente: $("#idClientePavimento").val(),
+				        	idClientePavimento: $("#idClientePavimento").val(),
 				        	idBlocoPavimento: $("#idBlocoPavimento").val(),
 				        	pavimento: $("#pavimento").val(),
 				        	acao:"IncluirPavimento"
 				        	
 				        },  
-				        success: function(result){     
-				           LimparCampos("#formCadastro");
-				           $("#mensagemSucessoInclusaoPavimento").slideDown();
+				        success: function(result){
+				        	if(result.msg == 'erro'){
+				        		 $("#mensagemPavimentoJaCadastrado").slideDown(); 
+				        	}else if(result.msg == 'ok'){
+				        		 $("#mensagemSucessoInclusaoPavimento").slideDown();
+				        		LimparCampos("#formCadastro");
+						        $("#blocoPavimento").attr('disabled','disabled');
+						        $("#pavimento").attr('disabled','disabled');
+				        	}
 				        },
 		                 error:function(){
-		                	 $("#mensagemErroInclusaoPavimento").slideDown();   
+		                	// $("#mensagemErroInclusaoPavimento").slideDown(); 
+		                	$("#mensagemPavimentoJaCadastrado").slideDown(); 
 		                }      
 				    });
 
@@ -264,23 +283,32 @@ $(document).ready(function(){
 			});
 			$("#botaoIncluirLocal").click(function(){
 				
-				if($("#clienteLocal").val() == "" || $("#pavimento").val() == "" || $("#blocosLocal option:selected").val() == "0" || $("#pavimentosLocal option:selected").val() == "0"){
-					$("#mensagemPreencherCampos").slideDown();
+				if($("#idClienteLocal").val() == "" || $("#clienteLocal").val() == "" || $("#idBlocoLocal").val() == 0 || $("#blocoLocal").val() == "" || $("#idPavimentoLocal").val() == 0 || $("#pavimentoLocal").val() == "" || $("#local").val() == "" ){
+					$("#mensagemPreencherCamposLocal").slideDown();
 				return false;
 				}else{
 					$.ajax({  
 				        type: "post",    
-				        url: "/climanut/ServletSistema", 
+				        url: "/climanut/ServletSistema",
+				        dataType: "json",
 				        data: {
-				        	idCliente: $("#idClienteBloco").val(), 
-				        	idBloco: $("#idBloco").val(),  
-				        	idBloco: $("#pavimento").val(),  
-				        	acao:"IncluirPAvimento"
+				        	idClienteLocal: $("#idClienteLocal").val(), 
+				        	idBlocoLocal: $("#idBlocoLocal").val(),  
+				        	idPavimentoLocal: $("#idPavimentoLocal").val(),  
+				        	local: $("#local").val(),  
+				        	acao:"IncluirLocal"
 				        	
 				        },  
-				        success: function(result){     
-				           LimparCampos("#formCadastro");
-				           $("#mensagemSucessoInclusaoLocal").slideDown();
+				        success: function(result){
+				        	if(result.msg == 'erro'){
+				        		 $("#mensagemLocalJaCadastrado").slideDown(); 
+				        	}else if(result.msg == 'ok'){
+				        		$("#mensagemSucessoInclusaoLocal").slideDown();
+				        		LimparCampos("#formCadastro");
+								$("#blocoLocal").attr('disabled','disabled');
+								$("#pavimentoLocal").attr('disabled','disabled');
+								$("#local").attr('disabled','disabled');
+				        	}
 				        },
 		                 error:function(){
 		                	 $("#mensagemErroInclusaoLocal").slideDown();   
@@ -292,28 +320,45 @@ $(document).ready(function(){
 			});
 			$("#botaoIncluirEquipamento").click(function(){
 				
-				if($("#clienteEquipamento").val() == "" || $("#equipamento").val() == "" || $("#blocosEquipamento option:selected").val() == "0" || 
-				   $("#pavimentosEquipamento option:selected").val() == "0" || $("#locaisEquipamento option:selected").val() == "0"){
-						$("#mensagemPreencherCampos").slideDown();
-				return false;
+				if($("#idClienteEquipamento").val() == 0 || $("#clienteEquipamento").val() == "" ||
+					$("#idBlocoEquipamento").val() == 0 || $("#blocoEquipamento").val() == "" ||
+					$("#idPavimentoEquipamento").val() == 0 || $("#pavimentoEquipamento").val() == "" ||
+					$("#idLocalEquipamento").val() == 0 || $("#localEquipamento").val() == "" || 
+					$("#idEquipamento").val() == 0 || $("#equipamento").val() == "" || $("#numeroInterno").val() == ""){
+					$("#mensagemPreencherCampos").slideDown();
+						return false;
 				}else{
-					$("#mensagemSucessoInclusaoEquipamento").slideDown();
-					/*$.ajax({  
+					
+						$.ajax({  
 				        type: "post",    
-				        url: "/climanut/ServletSistema", 
+				        url: "/climanut/ServletSistema",
+				        dataType: "json",
 				        data: {
-				        	equipamento: $("#equipamento").val(),  
-				        	acao:"Incluir"
+				        	idClienteEquipamento: $("#idClienteEquipamento").val(),
+				        	idLocalEquipamento:$("#idLocalEquipamento").val(),
+				        	idEquipamento:$("#idEquipamento").val(),
+				        	numeroInterno:$("#numeroInterno").val(),
+				        	acao:"IncluirEquipamentosPorLocal"
 				        	
 				        },  
-				        success: function(result){     
-				           LimparCampos("#formCadastro");
-				           $("#mensagemSucessoInclusao").slideDown();
+				        success: function(result){   
+				        	if(result.msg == 'erro'){
+				        		$("#mensagemNumeroInternoJaCadastrado").slideDown(); 
+				        	}else if(result.msg == 'ok'){
+				        		$("#mensagemSucessoInclusaoEquipamento").slideDown(); 
+				        		LimparCampos("#formCadastro");
+								$("#blocoEquipamento").attr('disabled','disabled');
+								$("#pavimentoEquipamento").attr('disabled','disabled');
+								$("#localEquipamento").attr('disabled','disabled');
+								$("#equipamento").attr('disabled','disabled');
+								$("#numeroInterno").attr('disabled','disabled');
+				        	}
+				        	
 				        },
 		                 error:function(){
-		                	 $("#mensagemErroInclusao").slideDown();   
+		                	 $("#mensagemErroInclusaoEquipamento").slideDown();   
 		                 }      
-				    });  */
+				    });  
 
 				}
 	
@@ -354,19 +399,7 @@ $(document).ready(function(){
 				LimparMensagens();
 				
 			});
-			$("#bloco").attr('disabled','disabled');
-			$("#blocoPavimento").attr('disabled','disabled');
-			$("#pavimento").attr('disabled','disabled');
-			$("#blocoLocal").attr('disabled','disabled');
-			$("#pavimentoLocal").attr('disabled','disabled');
-			$("#local").attr('disabled','disabled');
-			$("#blocoEquipamento").attr('disabled','disabled');
-			$("#pavimentoEquipamento").attr('disabled','disabled');
-			$("#localEquipamento").attr('disabled','disabled');
-			$("#equipamento").attr('disabled','disabled');
-		
-						
-			
+				
 			/* RETIRA MENSAGEM DA TELA E LIMPANDO CAMPOS*/
 			$(".campoTexto").keypress(function(){
 				LimparMensagens();

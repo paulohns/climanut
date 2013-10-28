@@ -298,7 +298,31 @@ $(document).ready(function(){
 	        		});
 			//}*/
 		});
-		
+		$("#estados").change(function(){
+			console.log("estados:"+$("#estados").val());
+			LimparMensagens();
+			 $.ajax({
+                 type: "POST",
+                 url: "/climanut/PopulaEstadosCidades",
+                 dataType: "json",
+                 data: {
+                	 sigla: $("#estados").val(),
+                	 acao: "Cidades"
+                 },
+                 success: function(json){
+                   var options = "";
+                    $.each(json, function(key,value){
+                    	console.log("value.idCidade"+value.idCidade);
+                    	console.log("value.nomeCidade"+value.nomeCidade);
+                     options += '<option value="' + key + '">' + value.nomeCidade + '</option>';
+                   });
+                    $("#cidades").html(options);
+                 },
+                 error:function(){  
+                     alert("ERRO"); 
+                 }  
+        	 });     
+		}); 
 		/* ESCONDER A MENSAGEM */
 		$(".campoTexto").keypress(function(){
 			LimparMensagens();
