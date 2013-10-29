@@ -1,2 +1,8 @@
-/TesteMain.class
+/arquivo.properties
 /com
+/commons-logging.properties
+/email.properties
+/hibernate.cfg.xml
+/log4j.xml
+/persistence.xml
+/relatorioAnvisa.jasper

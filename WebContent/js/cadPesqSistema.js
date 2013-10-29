@@ -283,7 +283,12 @@ $(document).ready(function(){
 			});
 			$("#botaoIncluirLocal").click(function(){
 				
-				if($("#idClienteLocal").val() == "" || $("#clienteLocal").val() == "" || $("#idBlocoLocal").val() == 0 || $("#blocoLocal").val() == "" || $("#idPavimentoLocal").val() == 0 || $("#pavimentoLocal").val() == "" || $("#local").val() == "" ){
+				if($("#idClienteLocal").val() == "" || $("#clienteLocal").val() == "" || 
+						$("#idBlocoLocal").val() == 0 || $("#blocoLocal").val() == "" || 
+						$("#idPavimentoLocal").val() == 0 || $("#pavimentoLocal").val() == "" || 
+						$("#local").val() == "" || $("#areaClimatizada").val() == "" || 
+						$("#pessoasFixas").val() == "" || $("#pessoasFlutuantes").val() == "" ||
+						$("#tipoAtividade").val() == ""){
 					$("#mensagemPreencherCamposLocal").slideDown();
 				return false;
 				}else{
@@ -295,7 +300,11 @@ $(document).ready(function(){
 				        	idClienteLocal: $("#idClienteLocal").val(), 
 				        	idBlocoLocal: $("#idBlocoLocal").val(),  
 				        	idPavimentoLocal: $("#idPavimentoLocal").val(),  
-				        	local: $("#local").val(),  
+				        	local: $("#local").val(),
+				        	areaClimatizada: $("#areaClimatizada").val(),
+				        	pessoasFixas:$("#pessoasFixas").val(),
+				        	pessoasFlutuantes: $("#pessoasFlutuantes").val(),
+				        	tipoAtividade:$("#tipoAtividade").val(),
 				        	acao:"IncluirLocal"
 				        	
 				        },  
@@ -308,6 +317,10 @@ $(document).ready(function(){
 								$("#blocoLocal").attr('disabled','disabled');
 								$("#pavimentoLocal").attr('disabled','disabled');
 								$("#local").attr('disabled','disabled');
+								$("#areaClimatizada").attr('disabled','disabled');
+								$("#pessoasFixas").attr('disabled','disabled');
+								$("#pessoasFlutuantes").attr('disabled','disabled');
+								$("#tipoAtividade").attr('disabled','disabled');
 				        	}
 				        },
 		                 error:function(){

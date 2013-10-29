@@ -37,7 +37,7 @@ $(document).ready(function(){
 			console.log("idSelecionado:"+$("#idCliente").val());
 			
 		},
-		change:function(event){
+		change:function(event,ui){
 			if ( !ui.item ) {
 				ui.item = "";
 				$("#idCliente").val(0); 
@@ -93,13 +93,15 @@ $(document).ready(function(){
 			//Habilitar Campos
 			$("#bloco").attr('disabled',false);
 		},
-		change:function(event){
+		change:function(event,ui){
 			if ( !ui.item ) {
 				ui.item = "";
 				$("#idClienteBloco").val(0); 
 				$("#clienteBloco").val("");
 				$("#clienteBloco").focus();
 				$("#bloco").attr('disabled','disabled');
+				$("#idBloco").val(0); 
+				$("#bloco").val("");
 			}
 		}
 	});
@@ -158,13 +160,18 @@ $(document).ready(function(){
 			//Habilitar Campos
 			$("#blocoPavimento").attr('disabled',false);
 		},
-		change:function(event){
+		change:function(event,ui){
 			if ( !ui.item ) {
 				ui.item = "";
 				$("#idClientePavimento").val(0); 
 				$("#clientePavimento").val("");
 				$("#clientePavimento").focus();
 				$("#blocoPavimento").attr('disabled','disabled');
+				$("#idBlocoPavimento").val(0); 
+				$("#blocoPavimento").val("");
+				$("#pavimento").attr('disabled','disabled');
+				$("#idPavimento").val(0); 
+				$("#pavimento").val("");
 			}
 		}
 	});
@@ -209,13 +216,15 @@ $(document).ready(function(){
 			//Habilitar Campos
 			$("#pavimento").attr('disabled',false);
 		},
-		change:function(event){
+		change:function(event,ui){
 			if ( !ui.item ) {
 				ui.item = "";
 				$("#idBlocoPavimento").val(0); 
 				$("#blocoPavimento").val("");
 				$("#blocoPavimento").focus();
 				$("#pavimento").attr('disabled','disabled');
+				$("#idPavimento").val(0); 
+				$("#pavimento").val("");
 			}
 		}
 	});
@@ -293,13 +302,24 @@ $(document).ready(function(){
 			$("#blocoLocal").attr('disabled',false);
 			
 		},
-		change:function(event){
+		change:function(event,ui){
 			if ( !ui.item ) {
 				ui.item = "";
 				$("#idClienteLocal").val(0); 
 				$("#clienteLocal").val("");
 				$("#clienteLocal").focus();
 				$("#blocoLocal").attr('disabled','disabled');
+				$("#idBlocoLocal").val(0); 
+				$("#blocoLocal").val("");
+				$("#pavimentoLocal").attr('disabled','disabled');
+				$("#idPavimentoLocal").val(0); 
+				$("#pavimentoLocal").val("");
+				$("#local").attr('disabled','disabled');
+				$("#local").val("");
+				$("#areaClimatizada").attr('disabled','disabled');
+				$("#pessoasFixas").attr('disabled','disabled');
+				$("#pessoasFlutuantes").attr('disabled','disabled');
+				$("#tipoAtividade").attr('disabled','disabled');
 			}
 			
 		}
@@ -356,13 +376,21 @@ $(document).ready(function(){
 			$("#pavimentoLocal").attr('disabled',false);
 			
 		},
-		change:function(event){
+		change:function(event,ui){
 			if ( !ui.item ) {
 				ui.item = "";
 				$("#idBlocoLocal").val(0); 
 				$("#blocoLocal").val("");
 				$("#blocoLocal").focus();
 				$("#pavimentoLocal").attr('disabled','disabled');
+				$("#idPavimentoLocal").val(0); 
+				$("#pavimentoLocal").val("");
+				$("#local").attr('disabled','disabled');
+				$("#local").val("");
+				$("#areaClimatizada").attr('disabled','disabled');
+				$("#pessoasFixas").attr('disabled','disabled');
+				$("#pessoasFlutuantes").attr('disabled','disabled');
+				$("#tipoAtividade").attr('disabled','disabled');
 			}
 		}
 	});
@@ -405,23 +433,80 @@ $(document).ready(function(){
 			console.log("idPavimentoLocal:"+$("#idPavimentoLocal").val());
 			//Habilitar Campos
 			$("#local").attr("disabled",false);
-			$("#areaClimatizada").attr('disabled',false);
-			$("#pessoasFixas").attr('disabled',false);
-			$("#pessoasFlutuantes").attr('disabled',false);
-			$("#tipoAtividade").attr('disabled',false);
+			
 		},
-		change:function(event){
+		change:function(event,ui){
 			if ( !ui.item ) {
 				ui.item = "";
 				$("#idPavimentoLocal").val(0); 
 				$("#pavimentoLocal").val("");
 				$("#pavimentoLocal").focus();
-				$("#local").attr("disabled",false);
+				$("#local").attr('disabled','disabled');
+				$("#local").val("");
 				$("#areaClimatizada").attr('disabled','disabled');
 				$("#pessoasFixas").attr('disabled','disabled');
 				$("#pessoasFlutuantes").attr('disabled','disabled');
 				$("#tipoAtividade").attr('disabled','disabled');
 			}
+		}
+	});
+	$("#local").autocomplete({
+		source: function(request, response) {
+			$.ajax({
+				type: "post",
+				url: "/climanut/ServletLocal",
+				dataType: "json",
+				data: {
+					termo:$("#local").val(),
+					idPavimentoEquipamento: $("#idPavimentoLocal").val(),
+					acao:"PesquisarAutocompleteLocalPorPavimento"
+				},
+				success: function(data) {
+					if(data.length === 0){
+						$("#idLocal").val(0);
+						console.log("idBlocoLocalVazio:"+$("#idBlocoLocal").val());
+						console.log("idPavimentoLocalVazio:"+$("#idPavimentoLocal").val());
+						console.log("pavimentoLocalVazio:"+$("#pavimentoLocal").val());
+					}else{
+						response($.map(data, function(item) {
+							return {
+								value: item.nome,
+								id: item.id
+							};
+						})); 
+					}
+				},
+				error:function(){
+					console.log("Erro");
+				}
+			});
+		},
+		select: function(event, ui) {
+			$("#idLocal").val(ui.item.id);
+			console.log("idSelecionado:"+$("#idLocal").val());
+			console.log("idLocal:"+$("#idLocal").val());
+			//Limpar os campos abaixo
+			$("#idLocal").val(0);
+			$("#local").val("");
+			//Habilitar Campos
+			$("#areaClimatizada").attr('disabled',false);
+			$("#pessoasFixas").attr('disabled',false);
+			$("#pessoasFlutuantes").attr('disabled',false);
+			$("#tipoAtividade").attr('disabled',false);
+		},
+		change:function(event,ui){
+			if ( !ui.item ) {
+				ui.item = "";
+				$("#areaClimatizada").attr('disabled','disabled');
+				$("#areaClimatizada").val("");
+				$("#pessoasFixas").attr('disabled','disabled');
+				$("#pessoasFixas").val("");
+				$("#pessoasFlutuantes").attr('disabled','disabled');
+				$("#pessoasFlutuantes").val("");
+				$("#tipoAtividade").attr('disabled','disabled');
+				$("#tipoAtividade").val("");
+			}
+			
 		}
 	});
 	//AUTOCOMPLETE EQUIPAMENTO (CLIENTE, BLOCO, PAVIMENTO, LOCAL E EQUIPAMENTO)
@@ -495,6 +580,7 @@ $(document).ready(function(){
 			$("#equipamento").val("");
 			//Habilitar Campos
 			$("#blocoEquipamento").attr('disabled',false);
+			
 		},
 		change: function( event,ui) {
 			if ( !ui.item ) {
@@ -503,6 +589,19 @@ $(document).ready(function(){
 				$("#clienteEquipamento").val("");
 				$("#clienteEquipamento").focus();
 				$("#blocoEquipamento").attr('disabled','disabled');
+				$("#idBlocoEquipamento").val(0); 
+				$("#blocoEquipamento").val("");
+				$("#pavimentoEquipamento").attr('disabled','disabled');
+				$("#idPavimentoEquipamento").val(0);
+				$("#pavimentoEquipamento").val("");
+				$("#localEquipamento").attr('disabled','disabled');
+				$("#idLocalEquipamento").val(0); 
+				$("#localEquipamento").val("");
+				$("#equipamento").attr('disabled','disabled');
+				$("#idEquipamento").val(0);
+				$("#equipamento").val("");
+				$("#numeroInterno").attr('disabled','disabled');
+				$("#numeroInterno").val("");
            }
 			
 		}
@@ -555,13 +654,23 @@ $(document).ready(function(){
 			//Habilitar Campos
 			$("#pavimentoEquipamento").attr('disabled',false);
 		},
-		change:function(event){
+		change:function(event,ui){
 			if ( !ui.item ) {
 				ui.item = "";
 				$("#idBlocoEquipamento").val(0); 
 				$("#blocoEquipamento").val("");
 				$("#blocoEquipamento").focus();
 				$("#pavimentoEquipamento").attr('disabled','disabled');
+				$("#idPavimentoEquipamento").val(0); 
+				$("#pavimentoEquipamento").val("");
+				$("#localEquipamento").attr('disabled','disabled');
+				$("#idLocalEquipamento").val(0); 
+				$("#localEquipamento").val("");
+				$("#equipamento").attr('disabled','disabled');
+				$("#idEquipamento").val(0); 
+				$("#equipamento").val("");
+				$("#numeroInterno").attr('disabled','disabled');
+				$("#numeroInterno").val("");
 			}
 		}
 	});
@@ -613,13 +722,20 @@ $(document).ready(function(){
 			//Habilitar Campos
 			$("#localEquipamento").attr('disabled',false);
 		},
-		change:function(event){
+		change:function(event,ui){
 			if ( !ui.item ) {
 				ui.item = "";
 				$("#idPavimentoEquipamento").val(0); 
 				$("#pavimentoEquipamento").val("");
 				$("#pavimentoEquipamento").focus();
 				$("#localEquipamento").attr('disabled','disabled');
+				$("#idLocalEquipamento").val(0); 
+				$("#localEquipamento").val("");
+				$("#equipamento").attr('disabled','disabled');
+				$("#idEquipamento").val(0); 
+				$("#equipamento").val("");
+				$("#numeroInterno").attr('disabled','disabled');
+				$("#numeroInterno").val("");
 			}
 		}
 	});
@@ -664,13 +780,17 @@ $(document).ready(function(){
 			//Habilitar Campos
 			$("#equipamento").attr('disabled',false);
 		},
-		change:function(event){
+		change:function(event,ui){
 			if ( !ui.item ) {
 				ui.item = "";
 				$("#idLocalEquipamento").val(0); 
 				$("#localEquipamento").val("");
 				$("#localEquipamento").focus();
 				$("#equipamento").attr('disabled','disabled');
+				$("#idEquipamento").val(0);
+				$("#equipamento").val("");
+				$("#numeroInterno").attr('disabled','disabled');
+				$("#numeroInterno").val("");
 			}
 			
 		}
@@ -718,13 +838,14 @@ $(document).ready(function(){
 			$("#numeroInterno").attr('disabled',false);
 		},
 		
-		change:function(event){
+		change:function(event,ui){
 			if ( !ui.item ) {
 				ui.item = "";
 				$("#idEquipamento").val(0);
 				$("#equipamento").val("");
 				$("#equipamento").focus();
 				$("#numeroInterno").attr('disabled','disabled');
+				$("#numeroInterno").val("");
 			}
 		}
 	});

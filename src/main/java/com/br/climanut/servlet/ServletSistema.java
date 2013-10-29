@@ -245,6 +245,20 @@ public class ServletSistema extends HttpServlet {
 			System.out.println("idBloco:"+idPavimento);
 			String campoLocal = request.getParameter("local");
 			System.out.println("campoLocal:"+campoLocal);
+			String campoAreaClimatizada = request.getParameter("areaClimatizada");
+			System.out.println("campoAreaClimatizada:"+campoAreaClimatizada);
+			int areaClimatizada = Integer.valueOf(campoAreaClimatizada);
+			System.out.println("areaClimatizada:"+areaClimatizada);
+			String campoPessoasFixas = request.getParameter("pessoasFixas");
+			System.out.println("campoPessoasFixas:"+campoPessoasFixas);
+			int pessoasFixas = Integer.valueOf(campoPessoasFixas);
+			System.out.println("pessoasFixas:"+pessoasFixas);
+			String campoPessoasFlutuantes = request.getParameter("pessoasFlutuantes");
+			System.out.println("campoPessoasFlutuantes:"+campoPessoasFlutuantes);
+			int pessoasFlutuantes = Integer.valueOf(campoAreaClimatizada);
+			System.out.println("pessoasFlutuantes:"+pessoasFlutuantes);
+			String tipoAtividade = request.getParameter("tipoAtividade");
+			System.out.println("tipoAtividade:"+tipoAtividade);
 			
 			List<Local> listaLocais = new ArrayList<Local>();
 
@@ -275,6 +289,10 @@ public class ServletSistema extends HttpServlet {
 				local = new Local();
 				local.setDescricaoLocal(campoLocal);
 				local.setPavimento(pavimento);
+				local.setAreaClimatizada(areaClimatizada);
+				local.setPessoasFixas(pessoasFixas);
+				local.setPessoasFlutuantes(pessoasFlutuantes);
+				local.setTipoAtividade(tipoAtividade);
 				sistemaFacade.createLocal(local);
 	        }
 	        json.put("msg",msg);
